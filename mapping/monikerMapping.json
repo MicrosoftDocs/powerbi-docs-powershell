@@ -1,0 +1,8 @@
+{
+    "powerbi-ps-1.0.193": {
+        "conceptualToc": "docs-conceptual/TOC.yml",
+        "conceptualTocUrl": "/powershell/power-bi/toc.json",
+        "referenceTocUrl": "/powershell/module/powerbi-ps-1.0.193/toc.json",
+        "packageRoot": "powerbi-ps-1.0.193"
+    }
+}
