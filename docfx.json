@@ -1,0 +1,87 @@
+{
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.md"
+        ],
+        "src": "docs-conceptual",
+        "version": "powerbi-ps-1.0.193",
+        "dest": "power-bi",
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**",
+          "README.md",
+          "LICENSE",
+          "LICENSE-CODE",
+          "ThirdPartyNotices"
+        ]
+      },
+      {
+        "files": [
+          "toc.yml"
+        ],
+        "src": "docs-conceptual",
+        "version": "powerbi-ps-1.0.193",
+        "dest": "power-bi"
+      },
+      {
+        "files": [
+          "**/*.md"
+        ],
+        "src": "powerbi-ps-1.0.193",
+        "version": "powerbi-ps-1.0.193",
+        "dest": "module"
+      },
+      {
+        "files": [
+          "toc.yml"
+        ],
+        "src": "powerbi-ps-1.0.193",
+        "version": "powerbi-ps-1.0.193",
+        "dest": "module/powerbi-ps-1.0.193"
+      },
+      {
+        "files": [
+          "**/*.md"
+        ],
+        "src": "virtual-directory",
+        "dest": "power-bi"
+      },
+      {
+        "files": [
+          "toc.yml"
+        ],
+        "src": "bread",
+        "version": "powerbi-ps-1.0.193",
+        "dest": "bread"
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "**/*.png",
+          "**/*.jpg"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**"
+        ]
+      }
+    ],
+    "versions": {
+      "powerbi-ps-1.0.193": {
+        "dest": "powerbi-ps-1.0.193"
+      }
+    },
+    "overwrite": [],
+    "externalReference": [],
+    "globalMetadata": {
+    "apiPlatform": "powershell",
+    "breadcrumb_path": "/powershell/bread/toc.json"
+  },
+    "fileMetadata": {},
+    "template": [],
+    "dest": "powerbi-ps"
+  }
+}
