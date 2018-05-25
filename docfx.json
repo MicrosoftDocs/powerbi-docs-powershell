@@ -78,10 +78,32 @@
     "externalReference": [],
     "globalMetadata": {
     "apiPlatform": "powershell",
-    "breadcrumb_path": "/powershell/bread/toc.json"
+    "breadcrumb_path": "/powershell/bread/toc.json",
+    "extendBreadcrumb": true
   },
-    "fileMetadata": {},
+  "filemetadata": {
+    "ms.service": {
+      "powerbi-ps-*/**/*.md": "powerbi"
+    },    
+    "ms.component": {
+      "powerbi-ps-*/**/*.md": "powerbi-admin"
+    },
+    "ms.topic": {
+      "powerbi-ps-*/**/*.md": "managed-reference"
+    },
+    "ms.devlang": {
+      "powerbi-ps-*/**/*.md": "powershell"
+    },
+    "ms.author": {
+      "powerbi-ps-*/**/*.md": "mblythe"
+    },
+    "author": {
+      "powerbi-ps-*/**/*.md": "mgblythe"
+    }
+  },
     "template": [],
     "dest": "powerbi-ps"
   }
 }
+
+
