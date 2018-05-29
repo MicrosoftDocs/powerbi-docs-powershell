@@ -5,7 +5,9 @@
         "referenceTocUrl": "/powershell/module/powerbi-ps-1.0.193/toc.json",
         "packageRoot": "powerbi-ps-1.0.193",
         "modules":{
-            "powerbi-ps-1.0.193":{}
+            "Profile":{},
+            "Reports":{},
+            "Workspaces":{}
         }
     }
 }
