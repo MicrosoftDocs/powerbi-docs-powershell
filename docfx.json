@@ -23,7 +23,7 @@
         ],
         "src": "docs-conceptual",
         "version": "powerbi-ps-1.0.193",
-        "dest": "power-bi/bi"
+        "dest": "power-bi"
       },
       {
         "files": [
