@@ -1,5 +1,5 @@
 ---
-Module Name: MicrosoftPowerBIMgmtWorkspaces
+Module Name: MicrosoftPowerBIMgmt.Workspaces
 Module Guid: 3137355e-2bac-4061-9bfb-25b18c8bce9a
 Download Help Link:
 Help Version:

@@ -1,5 +1,5 @@
 ---
-Module Name: MicrosoftPowerBIMgmtProfile
+Module Name: MicrosoftPowerBIMgmt.Profile
 Module Guid: 53a44a15-6234-40b1-9797-b8142e57fac1
 Download Help Link:
 Help Version:

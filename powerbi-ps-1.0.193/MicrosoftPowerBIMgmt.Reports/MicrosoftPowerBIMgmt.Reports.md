@@ -1,5 +1,5 @@
 ---
-Module Name: MicrosoftPowerBIMgmtReports
+Module Name: MicrosoftPowerBIMgmt.Reports
 Module Guid: dc5af656-715d-465d-8b57-e167cd6fce39
 Download Help Link:
 Help Version:
