@@ -2,6 +2,19 @@
   tocHref: /
   topicHref: /
   items:
-  - name: Power BI PowerShell
-    tocHref: /powershell/power-bi/
-    topicHref: /powershell/power-bi/powerbi-powershell-overview
+  - name: Power BI
+    tocHref: /power-bi/
+    topicHref: /power-bi/index
+    items:
+    - name: Power BI PowerShell
+      tocHref: /powershell/power-bi/
+      topicHref: /powershell/power-bi/overview
+    - name: Power BI PowerShell
+      tocHref: /powershell/module/MicrosoftPowerBIMgmt.Profile/
+      topicHref: /powershell/power-bi/overview
+    - name: Power BI PowerShell
+      tocHref: /powershell/module/MicrosoftPowerBIMgmt.Workspaces/
+      topicHref: /powershell/power-bi/overview
+    - name: Power BI PowerShell
+      tocHref: /powershell/module/MicrosoftPowerBIMgmt.Reports/
+      topicHref: /powershell/power-bi/overview
