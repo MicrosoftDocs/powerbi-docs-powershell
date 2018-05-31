@@ -1,8 +1,8 @@
 ---
 Module Name: MicrosoftPowerBIMgmt.Profile
 Module Guid: 53a44a15-6234-40b1-9797-b8142e57fac1
-Download Help Link:
-Help Version:
+Download Help Link: {{Please enter FwLink manually}}
+Help Version: {{Please enter version of help manually (X.X.X.X) format}}
 Locale: en-US
 ---
 
@@ -16,3 +16,4 @@ Login to Power BI service.
 
 ### [Disconnect-PowerBIServiceAccount](Disconnect-PowerBIServiceAccount.md)
 Logout of the Power BI service.
+
