@@ -2,7 +2,7 @@
   "redirections": [
     {
       "source_path": "docs-conceptual/index.md",
-      "redirect_url": "/powershell/power-bi/powerbi-powershell-overview",
+      "redirect_url": "/powershell/power-bi/overview",
       "redirect_document_id": "False"
     }
 

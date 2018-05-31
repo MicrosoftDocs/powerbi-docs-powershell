@@ -54,7 +54,7 @@
         ],
         "src": "bread",
         "version": "powerbi-ps-1.0.193",
-        "dest": "bread"
+        "dest": "power-bi/bread"
       }
     ],
     "resource": [
@@ -84,7 +84,7 @@
   "filemetadata": {
     "ms.service": {
       "powerbi-ps-*/**/*.md": "powerbi"
-    },    
+    },
     "ms.component": {
       "powerbi-ps-*/**/*.md": "powerbi-admin"
     },
@@ -105,5 +105,3 @@
     "dest": "powerbi-ps"
   }
 }
-
-
