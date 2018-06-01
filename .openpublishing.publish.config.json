@@ -4,6 +4,7 @@
       "docset_name": "powerbi-ps",
       "build_source_folder": ".",
       "build_output_subfolder": "powerbi-ps",
+      "need_generate_pdf": true,
       "locale": "en-us",
       "monikers": [],
       "moniker_ranges": [],
