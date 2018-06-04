@@ -94,8 +94,11 @@
     "ms.devlang": {
       "powerbi-ps-*/**/*.md": "powershell"
     },
+    "product": {
+    "powerbi-ps-*/**/*.md": "powerbi"
+    },
     "ms.author": {
-      "powerbi-ps-*/**/*.md": "mblythe"
+    "powerbi-ps-*/**/*.md": "mblythe"
     },
     "author": {
       "powerbi-ps-*/**/*.md": "mgblythe"
