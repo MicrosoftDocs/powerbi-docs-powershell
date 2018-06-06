@@ -89,7 +89,7 @@
       "powerbi-ps-*/**/*.md": "powerbi-admin"
     },
     "ms.topic": {
-      "powerbi-ps-*/**/*.md": "managed-reference"
+      "powerbi-ps-*/**/*.md": "reference"
     },
     "ms.devlang": {
       "powerbi-ps-*/**/*.md": "powershell"
