@@ -6,7 +6,7 @@
           "**/*.md"
         ],
         "src": "docs-conceptual",
-        "version": "powerbi-ps-1.0.193",
+        "version": "powerbi-ps",
         "dest": "power-bi",
         "exclude": [
           "**/obj/**",
@@ -22,24 +22,24 @@
           "toc.yml"
         ],
         "src": "docs-conceptual",
-        "version": "powerbi-ps-1.0.193",
+        "version": "powerbi-ps",
         "dest": "power-bi"
       },
       {
         "files": [
           "**/*.md"
         ],
-        "src": "powerbi-ps-1.0.193",
-        "version": "powerbi-ps-1.0.193",
+        "src": "powerbi-ps",
+        "version": "powerbi-ps",
         "dest": "module"
       },
       {
         "files": [
           "toc.yml"
         ],
-        "src": "powerbi-ps-1.0.193",
-        "version": "powerbi-ps-1.0.193",
-        "dest": "module/powerbi-ps-1.0.193"
+        "src": "powerbi-ps",
+        "version": "powerbi-ps",
+        "dest": "module/powerbi-ps"
       },
       {
         "files": [
@@ -53,7 +53,7 @@
           "toc.yml"
         ],
         "src": "bread",
-        "version": "powerbi-ps-1.0.193",
+        "version": "powerbi-ps",
         "dest": "power-bi/bread"
       }
     ],
@@ -70,8 +70,8 @@
       }
     ],
     "versions": {
-      "powerbi-ps-1.0.193": {
-        "dest": "powerbi-ps-1.0.193"
+      "powerbi-ps": {
+        "dest": "powerbi-ps"
       }
     },
     "overwrite": [],
