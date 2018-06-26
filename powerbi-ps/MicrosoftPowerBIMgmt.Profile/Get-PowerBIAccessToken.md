@@ -17,7 +17,8 @@ Get-PowerBIAccessToken [-AsString] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Returns the Power BI access token gathered from Connect-PowerBIServiceAccount.
+Returns the Power BI access token gathered from logged in Power BI profile.
+Before you run this command, make sure you log in using Connect-PowerBIServiceAccount. 
 
 ## EXAMPLES
 

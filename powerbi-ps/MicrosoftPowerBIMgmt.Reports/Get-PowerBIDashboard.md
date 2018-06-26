@@ -1,68 +1,68 @@
 ---
 external help file: Microsoft.PowerBI.Commands.Reports.dll-Help.xml
 Module Name: MicrosoftPowerBIMgmt.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoftpowerbimgmt.reports/get-powerbireport?view=powerbi-ps
+online version:
 schema: 2.0.0
 ---
 
-# Get-PowerBIReport
+# Get-PowerBIDashboard
 
 ## SYNOPSIS
-Returns a list of Power BI reports.
+Returns a list of Power BI dashboards.
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-PowerBIReport [-Scope <PowerBIUserScope>] [-Filter <String>] [-First <Int32>] [-Skip <Int32>]
+Get-PowerBIDashboard [-Scope <PowerBIUserScope>] [-Filter <String>] [-First <Int32>] [-Skip <Int32>]
  [-WorkspaceId <Guid>] [<CommonParameters>]
 ```
 
 ### Id
 ```
-Get-PowerBIReport -Id <Guid> [-Scope <PowerBIUserScope>] [-WorkspaceId <Guid>] [<CommonParameters>]
+Get-PowerBIDashboard -Id <Guid> [-Scope <PowerBIUserScope>] [-WorkspaceId <Guid>] [<CommonParameters>]
 ```
 
 ### ObjectAndId
 ```
-Get-PowerBIReport -Id <Guid> [-Scope <PowerBIUserScope>] -Workspace <Workspace> [<CommonParameters>]
+Get-PowerBIDashboard -Id <Guid> [-Scope <PowerBIUserScope>] -Workspace <Workspace> [<CommonParameters>]
 ```
 
 ### Name
 ```
-Get-PowerBIReport -Name <String> [-Scope <PowerBIUserScope>] [-WorkspaceId <Guid>] [<CommonParameters>]
+Get-PowerBIDashboard -Name <String> [-Scope <PowerBIUserScope>] [-WorkspaceId <Guid>] [<CommonParameters>]
 ```
 
 ### ObjectAndName
 ```
-Get-PowerBIReport -Name <String> [-Scope <PowerBIUserScope>] -Workspace <Workspace> [<CommonParameters>]
+Get-PowerBIDashboard -Name <String> [-Scope <PowerBIUserScope>] -Workspace <Workspace> [<CommonParameters>]
 ```
 
 ### ObjectAndList
 ```
-Get-PowerBIReport [-Scope <PowerBIUserScope>] [-Filter <String>] [-First <Int32>] [-Skip <Int32>]
+Get-PowerBIDashboard [-Scope <PowerBIUserScope>] [-Filter <String>] [-First <Int32>] [-Skip <Int32>]
  -Workspace <Workspace> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Retrieves a list of Power BI reports that match the specified search criteria and scope.
+Retrieves a list of Power BI dashboards that match the specified search criteria and scope.
 Before you run this command, make sure you log in using Connect-PowerBIServiceAccount. 
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> Get-PowerBIReport
+PS C:\> Get-PowerBIDashboard
 ```
 
-Returns a list of all PowerBI reports that a user has access to.
+Returns all Power BI dashboards that the calling user is assigned to (-Scope Individual).
 
 ### Example 2
 ```powershell
-PS C:\> Get-PowerBIReport -Scope Organization
+PS C:\> Get-PowerBIDashboard -Scope Organization -Name 'Contoso Sales'
 ```
 
-Returns a list of all PowerBI reports within a user's organization.
+Returns a workspace named 'Contoso Sales' (case insensitive) within the user's organization.
 
 ## PARAMETERS
 
@@ -97,12 +97,12 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Id of the report to return.
+Id of the dashboard to return.
 
 ```yaml
 Type: Guid
 Parameter Sets: Id, ObjectAndId
-Aliases: ReportId
+Aliases: ImportId
 
 Required: True
 Position: Named
@@ -112,7 +112,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Name of the report to return if one exists with that name. Case insensitive search.
+Name of the dashboard to return if one exists with that name. Case insensitive search.
 
 ```yaml
 Type: String
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -Scope
-Indicates scope of the call. Individual returns only reports assigned to the caller; Organization returns all reports within a tenant (must be an administrator to initiate). Individual is the default.
+Indicates the scope of the call. Individual returns only dashboards assigned to the caller; Organization returns all dashboards within a tenant (must be an administrator to initiate). Individual is the default.
 
 ```yaml
 Type: PowerBIUserScope
@@ -158,7 +158,7 @@ Accept wildcard characters: False
 ```
 
 ### -Workspace
-Workspace to filter results to; only reports that belong to that workspace are shown.
+Workspace to filter results to; only dashboards that belong to that workspace are shown.
 
 ```yaml
 Type: Workspace
@@ -173,7 +173,7 @@ Accept wildcard characters: False
 ```
 
 ### -WorkspaceId
-Workspace Id to filter results to; only reports that belong to that workspace are shown.
+Workspace Id to filter results to; only dashboards that belong to that workspace are shown.
 
 ```yaml
 Type: Guid
@@ -196,7 +196,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.Collections.Generic.IEnumerable`1[[Microsoft.PowerBI.Common.Api.Reports.Report, Microsoft.PowerBI.Common.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+### System.Collections.Generic.IEnumerable`1[[Microsoft.PowerBI.Common.Api.Reports.Dashboard, Microsoft.PowerBI.Common.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 
 ## NOTES
 

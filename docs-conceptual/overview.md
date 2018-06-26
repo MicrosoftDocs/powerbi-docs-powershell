@@ -8,7 +8,7 @@ ms.reviewer: ''
 ms.service: powerbi
 ms.component: powerbi-service
 ms.topic: conceptual
-ms.date: 05/17/2018
+ms.date: 06/21/2018
 ms.author: mblythe
 ---
 
@@ -18,11 +18,12 @@ Welcome to the PowerShell reference for Microsoft Power BI. Here you will find r
 
 ## PowerShell Modules
 
-Below is a table of the various Power BI PowerShell modules covered in this reference.
+Below is a table of the Power BI PowerShell modules covered in this reference.
 
 | Description | Module Name | PowerShell Gallery link |
 | ----------- | ----------- | ----------------------- |
 | Rollup module for Power BI Cmdlets | MicrosoftPowerBIMgmt | [![MicrosoftPowerBIMgmt](https://img.shields.io/powershellgallery/v/MicrosoftPowerBIMgmt.svg?style=flat-square&label=MicrosoftPowerBIMgmt)](https://www.powershellgallery.com/packages/MicrosoftPowerBIMgmt/) |
+| Data module for Power BI Cmdlets | [MicrosoftPowerBIMgmt.Data](../powerbi-ps/MicrosoftPowerBIMgmt.Data/MicrosoftPowerBIMgmt.Data.md) | [![MicrosoftPowerBIMgmt.Data](https://img.shields.io/powershellgallery/v/MicrosoftPowerBIMgmt.Profile.svg?style=flat-square&label=MicrosoftPowerBIMgmt.Data)](https://www.powershellgallery.com/packages/MicrosoftPowerBIMgmt.Data/) |
 | Profile module for Power BI Cmdlets | [MicrosoftPowerBIMgmt.Profile](../powerbi-ps/MicrosoftPowerBIMgmt.Profile/MicrosoftPowerBIMgmt.Profile.md) | [![MicrosoftPowerBIMgmt.Profile](https://img.shields.io/powershellgallery/v/MicrosoftPowerBIMgmt.Profile.svg?style=flat-square&label=MicrosoftPowerBIMgmt.Profile)](https://www.powershellgallery.com/packages/MicrosoftPowerBIMgmt.Profile/) |
 | Reports module for Power BI | [MicrosoftPowerBIMgmt.Reports](../powerbi-ps/MicrosoftPowerBIMgmt.Reports/MicrosoftPowerBIMgmt.Reports.md) | [![MicrosoftPowerBIMgmt.Reports](https://img.shields.io/powershellgallery/v/MicrosoftPowerBIMgmt.Reports.svg?style=flat-square&label=MicrosoftPowerBIMgmt.Reports)](https://www.powershellgallery.com/packages/MicrosoftPowerBIMgmt.Reports/) |
 | Workspaces module for Power BI | [MicrosoftPowerBIMgmt.Workspaces](../powerbi-ps/MicrosoftPowerBIMgmt.Workspaces/MicrosoftPowerBIMgmt.Workspaces.md) | [![MicrosoftPowerBIMgmt.Workspaces](https://img.shields.io/powershellgallery/v/MicrosoftPowerBIMgmt.Workspaces.svg?style=flat-square&label=MicrosoftPowerBIMgmt.Workspaces)](https://www.powershellgallery.com/packages/MicrosoftPowerBIMgmt.Workspaces/) |
@@ -66,13 +67,13 @@ Two scopes are supported by cmdlets that interact with Power BI entities:
 - Individual is used to access entities that belong to the current user.
 - Organization is used to access entities across the entire company. Only Power BI tenant admins are allowed to use.
 
-### Login to Power BI
+### Log in to Power BI
 
 ```powershell
 Connect-PowerBIServiceAccount   # or Login-PowerBIServiceAccount
 ```
 
-### Get Workspaces
+### Get workspaces
 
 Get all workspaces for the user:
 
@@ -80,7 +81,7 @@ Get all workspaces for the user:
 Get-PowerBIWorkspace
 ```
 
-### Update Workspace
+### Update a workspace
 
 Update the name or description of a user's workspace:
 
@@ -88,7 +89,7 @@ Update the name or description of a user's workspace:
 Set-PowerBIWorkspace -Scope Organization -Id "3244f1c1-01cf-457f-9383-6035e4950fdc" -Name "Test Name" -Description "Test Description"
 ```
 
-### Add new user to workspace
+### Add a new user to a workspace
 
 Add a user to a given workspace:
 
@@ -104,15 +105,15 @@ Remove user's permissions from a given workspace:
 Remove-PowerBIWorkspaceUser -Scope Organization -Id 3244f1c1-01cf-457f-9383-6035e4950fdc -UserEmailAddress john@contoso.com
 ```
 
-### Restore Workspace
+### Restore a workspace
 
-Restores a deleted workspace:
+Restore a deleted workspace:
 
 ```powershell
 Restore-PowerBIWorkspace -Id "3244f1c1-01cf-457f-9383-6035e4950fdc" -RestoredName "TestWorkspace" -AdminEmailAddress "john@contoso.com"
 ```
 
-### Get Reports
+### Get reports
 
 Get all reports for the user:
 
@@ -120,7 +121,7 @@ Get all reports for the user:
 Get-PowerBIReport
 ```
 
-## Issues and Feedback
+## Issues and feedback
 
 If you find any bugs or would like to see certain functionality implemented for the PowerShell Cmdlets for Power BI, please [file an issue](https://github.com/Microsoft/powerbi-powershell/issues).
 

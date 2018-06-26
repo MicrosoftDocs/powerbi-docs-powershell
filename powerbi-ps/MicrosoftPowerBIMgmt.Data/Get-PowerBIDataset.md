@@ -1,68 +1,68 @@
 ---
-external help file: Microsoft.PowerBI.Commands.Reports.dll-Help.xml
-Module Name: MicrosoftPowerBIMgmt.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoftpowerbimgmt.reports/get-powerbireport?view=powerbi-ps
+external help file: Microsoft.PowerBI.Commands.Data.dll-Help.xml
+Module Name: MicrosoftPowerBIMgmt.Data
+online version:
 schema: 2.0.0
 ---
 
-# Get-PowerBIReport
+# Get-PowerBIDataset
 
 ## SYNOPSIS
-Returns a list of Power BI reports.
+Returns a list of Power BI datasets.
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-PowerBIReport [-Scope <PowerBIUserScope>] [-Filter <String>] [-First <Int32>] [-Skip <Int32>]
+Get-PowerBIDataset [-Scope <PowerBIUserScope>] [-Filter <String>] [-First <Int32>] [-Skip <Int32>]
  [-WorkspaceId <Guid>] [<CommonParameters>]
 ```
 
 ### Id
 ```
-Get-PowerBIReport -Id <Guid> [-Scope <PowerBIUserScope>] [-WorkspaceId <Guid>] [<CommonParameters>]
+Get-PowerBIDataset -Id <Guid> [-Scope <PowerBIUserScope>] [-WorkspaceId <Guid>] [<CommonParameters>]
 ```
 
 ### ObjectAndId
 ```
-Get-PowerBIReport -Id <Guid> [-Scope <PowerBIUserScope>] -Workspace <Workspace> [<CommonParameters>]
+Get-PowerBIDataset -Id <Guid> [-Scope <PowerBIUserScope>] -Workspace <Workspace> [<CommonParameters>]
 ```
 
 ### Name
 ```
-Get-PowerBIReport -Name <String> [-Scope <PowerBIUserScope>] [-WorkspaceId <Guid>] [<CommonParameters>]
+Get-PowerBIDataset -Name <String> [-Scope <PowerBIUserScope>] [-WorkspaceId <Guid>] [<CommonParameters>]
 ```
 
 ### ObjectAndName
 ```
-Get-PowerBIReport -Name <String> [-Scope <PowerBIUserScope>] -Workspace <Workspace> [<CommonParameters>]
+Get-PowerBIDataset -Name <String> [-Scope <PowerBIUserScope>] -Workspace <Workspace> [<CommonParameters>]
 ```
 
 ### ObjectAndList
 ```
-Get-PowerBIReport [-Scope <PowerBIUserScope>] [-Filter <String>] [-First <Int32>] [-Skip <Int32>]
- -Workspace <Workspace> [<CommonParameters>]
+Get-PowerBIDataset [-Scope <PowerBIUserScope>] [-First <Int32>] [-Skip <Int32>] -Workspace <Workspace>
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Retrieves a list of Power BI reports that match the specified search criteria and scope.
+Retrieves a list of Power BI datasets that match the specified search criteria and scope.
 Before you run this command, make sure you log in using Connect-PowerBIServiceAccount. 
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> Get-PowerBIReport
+PS C:\> Get-PowerBIDataset
 ```
 
-Returns a list of all PowerBI reports that a user has access to.
+Returns a list of all Power BI datasets a user has access to.
 
 ### Example 2
 ```powershell
-PS C:\> Get-PowerBIReport -Scope Organization
+PS C:\> Get-PowerBIDataset -Scope Organization
 ```
 
-Returns a list of all PowerBI reports within a user's organization.
+Returns a list of all Power BI datasets within a user's organization.
 
 ## PARAMETERS
 
@@ -71,7 +71,7 @@ OData filter, case-sensitive (element names start lowercase). Only supported whe
 
 ```yaml
 Type: String
-Parameter Sets: List, ObjectAndList
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -97,12 +97,12 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Id of the report to return.
+Id of the dataset to return.
 
 ```yaml
 Type: Guid
 Parameter Sets: Id, ObjectAndId
-Aliases: ReportId
+Aliases: DatasetId
 
 Required: True
 Position: Named
@@ -112,7 +112,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Name of the report to return if one exists with that name. Case insensitive search.
+Name of the dataset to return if one exists with that name. Case insensitive search.
 
 ```yaml
 Type: String
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -Scope
-Indicates scope of the call. Individual returns only reports assigned to the caller; Organization returns all reports within a tenant (must be an administrator to initiate). Individual is the default.
+Indicates scope of the call. Individual returns only datasets assigned to the caller; Organization returns all datasets within a tenant (must be an administrator to initiate). Individual is the default.
 
 ```yaml
 Type: PowerBIUserScope
@@ -158,7 +158,7 @@ Accept wildcard characters: False
 ```
 
 ### -Workspace
-Workspace to filter results to; only reports that belong to that workspace are shown.
+Workspace to filter results to, datasets only belonging to that workspace are shown.
 
 ```yaml
 Type: Workspace
@@ -173,7 +173,7 @@ Accept wildcard characters: False
 ```
 
 ### -WorkspaceId
-Workspace Id to filter results to; only reports that belong to that workspace are shown.
+Workspace ID to filter results to, datasets only belonging to that workspace are shown.
 
 ```yaml
 Type: Guid
@@ -196,7 +196,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.Collections.Generic.IEnumerable`1[[Microsoft.PowerBI.Common.Api.Reports.Report, Microsoft.PowerBI.Common.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+### System.Object
 
 ## NOTES
 
