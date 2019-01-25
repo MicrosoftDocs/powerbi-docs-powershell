@@ -85,7 +85,7 @@
     "ms.service": {
       "powerbi-ps-*/**/*.md": "powerbi"
     },
-    "ms.component": {
+    "ms.subservice": {
       "powerbi-ps-*/**/*.md": "powerbi-admin"
     },
     "ms.topic": {
