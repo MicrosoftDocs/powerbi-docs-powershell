@@ -69,7 +69,7 @@ Type: Guid
 Parameter Sets: (All)
 Aliases: GroupId
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
