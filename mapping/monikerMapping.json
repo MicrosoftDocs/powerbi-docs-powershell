@@ -5,6 +5,8 @@
         "referenceTocUrl": "/powershell/module/powerbi-ps/toc.json",
         "packageRoot": "powerbi-ps",
         "modules":{
+            "MicrosoftPowerBIMgmt.Admin":{},
+            "MicrosoftPowerBIMgmt.Capacities":{},
             "MicrosoftPowerBIMgmt.Data":{},
             "MicrosoftPowerBIMgmt.Profile":{},
             "MicrosoftPowerBIMgmt.Reports":{},
