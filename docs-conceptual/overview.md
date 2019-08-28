@@ -74,7 +74,7 @@ If the -Scope parameter doesn't exist on the cmdlet, the entity doesn't support 
 ### Log in to Power BI
 
 ```powershell
-Connect-PowerBIServiceAccount   # or Login-PowerBIServiceAccount, Login-PowerBI
+Connect-PowerBIServiceAccount   # or use aliases: Login-PowerBIServiceAccount, Login-PowerBI
 ```
 
 ### Get workspaces
@@ -119,6 +119,14 @@ Remove user's permissions from a given workspace:
 
 ```powershell
 Remove-PowerBIWorkspaceUser -Scope Organization -Id 3244f1c1-01cf-457f-9383-6035e4950fdc -UserEmailAddress john@contoso.com
+```
+
+### Get Workspace Migration Status
+
+Get Power BI workspace migration status:
+
+```powershell
+Get-PowerBIWorkspaceMigrationStatus -Id 038f9a64-1fcd-42f2-957a-13a63b3d3235
 ```
 
 ### Restore a workspace
@@ -227,6 +235,14 @@ Get Power BI datasets:
 
 ```powershell
 Get-PowerBIDataset
+```
+
+### Update Dataset Storage Mode
+
+Set Power BI dataset to use Premium Files for storage mode:
+
+```powershell
+Set-PowerBIDataset -Id 038f9a64-1fcd-42f2-957a-13a63b3d3235 -TargetStorageMode PremiumFiles
 ```
 
 ### Get datasources
