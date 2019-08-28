@@ -16,7 +16,7 @@ ms.author: mblythe
 
 Welcome to the PowerShell reference for Microsoft Power BI. Here you will find resources for PowerShell modules targeting Power BI.
 
-## PowerShell Modules
+## PowerShell modules
 
 Below is a table of the Power BI PowerShell modules covered in this reference.
 
@@ -30,7 +30,7 @@ Below is a table of the Power BI PowerShell modules covered in this reference.
 | Reports module for Power BI | [MicrosoftPowerBIMgmt.Reports](../powerbi-ps/MicrosoftPowerBIMgmt.Reports/MicrosoftPowerBIMgmt.Reports.md) | [![MicrosoftPowerBIMgmt.Reports](https://img.shields.io/powershellgallery/v/MicrosoftPowerBIMgmt.Reports.svg?style=flat-square&label=MicrosoftPowerBIMgmt.Reports)](https://www.powershellgallery.com/packages/MicrosoftPowerBIMgmt.Reports/) |
 | Workspaces module for Power BI | [MicrosoftPowerBIMgmt.Workspaces](../powerbi-ps/MicrosoftPowerBIMgmt.Workspaces/MicrosoftPowerBIMgmt.Workspaces.md) | [![MicrosoftPowerBIMgmt.Workspaces](https://img.shields.io/powershellgallery/v/MicrosoftPowerBIMgmt.Workspaces.svg?style=flat-square&label=MicrosoftPowerBIMgmt.Workspaces)](https://www.powershellgallery.com/packages/MicrosoftPowerBIMgmt.Workspaces/) |
 
-## Supported Environments and PowerShell Versions
+## Supported environments and PowerShell versions
 
 * Windows PowerShell v3.0 and up with .NET 4.7.1 or above.
 * PowerShell Core (v6) and up on any OS platform supported by PowerShell Core.
@@ -121,7 +121,7 @@ Remove user's permissions from a given workspace:
 Remove-PowerBIWorkspaceUser -Scope Organization -Id 3244f1c1-01cf-457f-9383-6035e4950fdc -UserEmailAddress john@contoso.com
 ```
 
-### Get Workspace Migration Status
+### Get workspace migration status
 
 Get Power BI workspace migration status:
 
@@ -237,7 +237,7 @@ Get Power BI datasets:
 Get-PowerBIDataset
 ```
 
-### Update Dataset Storage Mode
+### Update dataset storage mode
 
 Set Power BI dataset to use Premium Files for storage mode:
 
