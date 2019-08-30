@@ -16,7 +16,7 @@ ms.author: mblythe
 
 Welcome to the PowerShell reference for Microsoft Power BI. Here you will find resources for PowerShell modules targeting Power BI.
 
-## PowerShell Modules
+## PowerShell modules
 
 Below is a table of the Power BI PowerShell modules covered in this reference.
 
@@ -30,7 +30,7 @@ Below is a table of the Power BI PowerShell modules covered in this reference.
 | Reports module for Power BI | [MicrosoftPowerBIMgmt.Reports](../powerbi-ps/MicrosoftPowerBIMgmt.Reports/MicrosoftPowerBIMgmt.Reports.md) | [![MicrosoftPowerBIMgmt.Reports](https://img.shields.io/powershellgallery/v/MicrosoftPowerBIMgmt.Reports.svg?style=flat-square&label=MicrosoftPowerBIMgmt.Reports)](https://www.powershellgallery.com/packages/MicrosoftPowerBIMgmt.Reports/) |
 | Workspaces module for Power BI | [MicrosoftPowerBIMgmt.Workspaces](../powerbi-ps/MicrosoftPowerBIMgmt.Workspaces/MicrosoftPowerBIMgmt.Workspaces.md) | [![MicrosoftPowerBIMgmt.Workspaces](https://img.shields.io/powershellgallery/v/MicrosoftPowerBIMgmt.Workspaces.svg?style=flat-square&label=MicrosoftPowerBIMgmt.Workspaces)](https://www.powershellgallery.com/packages/MicrosoftPowerBIMgmt.Workspaces/) |
 
-## Supported Environments and PowerShell Versions
+## Supported environments and PowerShell versions
 
 * Windows PowerShell v3.0 and up with .NET 4.7.1 or above.
 * PowerShell Core (v6) and up on any OS platform supported by PowerShell Core.
@@ -74,7 +74,7 @@ If the -Scope parameter doesn't exist on the cmdlet, the entity doesn't support 
 ### Log in to Power BI
 
 ```powershell
-Connect-PowerBIServiceAccount   # or Login-PowerBIServiceAccount, Login-PowerBI
+Connect-PowerBIServiceAccount   # or use aliases: Login-PowerBIServiceAccount, Login-PowerBI
 ```
 
 ### Get workspaces
@@ -119,6 +119,14 @@ Remove user's permissions from a given workspace:
 
 ```powershell
 Remove-PowerBIWorkspaceUser -Scope Organization -Id 3244f1c1-01cf-457f-9383-6035e4950fdc -UserEmailAddress john@contoso.com
+```
+
+### Get workspace migration status
+
+Get Power BI workspace migration status:
+
+```powershell
+Get-PowerBIWorkspaceMigrationStatus -Id 038f9a64-1fcd-42f2-957a-13a63b3d3235
 ```
 
 ### Restore a workspace
@@ -227,6 +235,14 @@ Get Power BI datasets:
 
 ```powershell
 Get-PowerBIDataset
+```
+
+### Update dataset storage mode
+
+Set Power BI dataset to use Premium Files for storage mode:
+
+```powershell
+Set-PowerBIDataset -Id 038f9a64-1fcd-42f2-957a-13a63b3d3235 -TargetStorageMode PremiumFiles
 ```
 
 ### Get datasources
