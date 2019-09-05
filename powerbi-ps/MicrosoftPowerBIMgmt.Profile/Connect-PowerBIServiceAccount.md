@@ -58,7 +58,7 @@ Logs in using user authentication against the China cloud, a prompt will display
 
 ### Example 3
 ```powershell
-PS C:\> Connect-PowerBIServiceAccount -ServicePrincipal -Credential (Get-Credential)
+PS C:\> Connect-PowerBIServiceAccount -Tenant [TenantId] -ServicePrincipal -Credential (Get-Credential)
 ```
 
 Logs in using a service principal against the Public cloud, a prompt will display from Get-Credential to enter your username (your AAD client ID) and password (your application secret key).
