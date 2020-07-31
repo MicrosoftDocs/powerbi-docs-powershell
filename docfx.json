@@ -27,7 +27,7 @@
       },
       {
         "files": [
-          "**/*.md"
+          "**/*.yml"
         ],
         "src": "powerbi-ps",
         "version": "powerbi-ps",
@@ -83,22 +83,22 @@
   },
   "filemetadata": {
     "ms.service": {
-      "powerbi-ps-*/**/*.md": "powerbi"
+      "powerbi-ps-*/**/*.yml": "powerbi"
     },
     "ms.subservice": {
-      "powerbi-ps-*/**/*.md": "powerbi-admin"
+      "powerbi-ps-*/**/*.yml": "powerbi-admin"
     },
     "ms.topic": {
-      "powerbi-ps-*/**/*.md": "reference"
+      "powerbi-ps-*/**/*.yml": "reference"
     },
     "ms.devlang": {
-      "powerbi-ps-*/**/*.md": "powershell"
+      "powerbi-ps-*/**/*.yml": "powershell"
     },
     "ms.author": {
-      "powerbi-ps-*/**/*.md": "mblythe"
+      "powerbi-ps-*/**/*.yml": "mblythe"
     },
     "author": {
-      "powerbi-ps-*/**/*.md": "mgblythe"
+      "powerbi-ps-*/**/*.yml": "mgblythe"
     }
   },
     "template": [],
