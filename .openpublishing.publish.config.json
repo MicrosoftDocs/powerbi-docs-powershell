@@ -14,7 +14,7 @@
         "ManagedReference": "Content",
         "RestApi": "Content",
         "PowershellModule": "Content",
-        "PowershellCmdlet": "Content",
+        "PowershellCmdlet": "Content"
       },
       "build_entry_point": "docs",
       "template_folder": "_themes",
