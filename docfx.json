@@ -31,6 +31,7 @@
         ],
         "src": "powerbi-ps",
         "version": "powerbi-ps",
+        "exclude":["toc.yml"],
         "dest": "module"
       },
       {
