@@ -53,5 +53,8 @@
     }
   ],
   "branch_target_mapping": {},
-  "need_generate_pdf_url_template": true
+  "need_generate_pdf_url_template": true,
+  "docs_build_engine": {
+    "name": "docfx_v3"
+  }
 }
