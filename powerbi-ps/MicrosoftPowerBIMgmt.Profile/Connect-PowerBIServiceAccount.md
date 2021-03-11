@@ -159,7 +159,7 @@ Cloud environment to connect against. Default is Public.
 Type: PowerBIEnvironmentType
 Parameter Sets: (All)
 Aliases:
-Accepted values: Public, Germany, USGov, China, USGovHigh, USGovMil
+Accepted values: Public, Germany, USGov, China, USGovHigh, USGovMil, Custom
 
 Required: False
 Position: Named
@@ -212,3 +212,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
