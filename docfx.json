@@ -85,22 +85,22 @@
   },
   "filemetadata": {
     "ms.service": {
-      "powerbi-ps-*/**/*.yml": "powerbi"
+      "powerbi-ps*/**/*.*": "powerbi"
     },
     "ms.subservice": {
-      "powerbi-ps-*/**/*.yml": "powerbi-admin"
+      "powerbi-ps*/**/*.*": "powerbi-admin"
     },
     "ms.topic": {
-      "powerbi-ps-*/**/*.yml": "reference"
+      "powerbi-ps*/**/*.*": "reference"
     },
     "ms.devlang": {
-      "powerbi-ps-*/**/*.yml": "powershell"
+      "powerbi-ps*/**/*.*": "powershell"
     },
     "ms.author": {
-      "powerbi-ps-*/**/*.yml": "mblythe"
+      "powerbi-ps*/**/*.*": "mblythe"
     },
     "author": {
-      "powerbi-ps-*/**/*.yml": "mgblythe"
+      "powerbi-ps*/**/*.*": "mgblythe"
     }
   },
     "template": [],
