@@ -14,24 +14,24 @@ Returns a list of Power BI workspaces.
 
 ### List (Default)
 ```
-Get-PowerBIWorkspace [-Scope <PowerBIUserScope>] [-Filter <String>] [-User <String>] [-Deleted] [-Orphaned]
+Get-PowerBIWorkspace [-Scope <PowerBIUserScope>] [-Filter <String>] [-User <String>] [-Deleted] [-Orphaned] [-Type <WorkspaceType>]
  [-First <Int32>] [-Skip <Int32>] [-Include <ArtifactType[]>] [<CommonParameters>]
 ```
 
 ### Id
 ```
-Get-PowerBIWorkspace -Id <Guid> [-Scope <PowerBIUserScope>] [-Include <ArtifactType[]>] [<CommonParameters>]
+Get-PowerBIWorkspace -Id <Guid> [-Scope <PowerBIUserScope>] [-Type <WorkspaceType>] [-Include <ArtifactType[]>] [<CommonParameters>]
 ```
 
 ### Name
 ```
-Get-PowerBIWorkspace -Name <String> [-Scope <PowerBIUserScope>] [-Include <ArtifactType[]>]
+Get-PowerBIWorkspace -Name <String> [-Scope <PowerBIUserScope>] [-Type <WorkspaceType>] [-Include <ArtifactType[]>]
  [<CommonParameters>]
 ```
 
 ### All
 ```
-Get-PowerBIWorkspace [-Scope <PowerBIUserScope>] [-Filter <String>] [-User <String>] [-Deleted] [-Orphaned]
+Get-PowerBIWorkspace [-Scope <PowerBIUserScope>] [-Filter <String>] [-User <String>] [-Deleted] [-Orphaned] [-Type <WorkspaceType>]
  [-Include <ArtifactType[]>] [-All] [<CommonParameters>]
 ```
 
@@ -201,6 +201,22 @@ Type: PowerBIUserScope
 Parameter Sets: (All)
 Aliases:
 Accepted values: Individual, Organization
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Type
+Type of the workspace to return. Case sensitive search.
+
+```yaml
+Type: WorkspaceType
+Parameter Sets: List, Name, Id, All
+Aliases:
+Accepted values: Workspace, Group, PersonalGroup
 
 Required: False
 Position: Named
