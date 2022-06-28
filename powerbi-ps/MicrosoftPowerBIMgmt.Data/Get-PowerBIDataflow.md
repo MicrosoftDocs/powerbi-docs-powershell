@@ -57,7 +57,7 @@ Before you run this command, make sure you log in using Connect-PowerBIServiceAc
 PS C:\> Get-PowerBIDataflow -WorkspaceId ed451706-2b02-430c-b25c-20c0842c6375
 ```
 
-Returns a list of all Power BI dataflows in workpsace with ID ed451706-2b02-430c-b25c-20c0842c6375 that the user has access to.
+Returns a list of all Power BI dataflows in workspace with ID ed451706-2b02-430c-b25c-20c0842c6375 that the user has access to.
 
 ### Example 2
 ```powershell
