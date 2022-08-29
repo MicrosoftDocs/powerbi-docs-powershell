@@ -14,30 +14,30 @@ Returns a list of Power BI workspaces.
 
 ### List (Default)
 ```
-Get-PowerBIWorkspace [-Scope <PowerBIUserScope>] [-Filter <String>] [-User <String>] [-Deleted] [-Orphaned] [-Type <WorkspaceType>]
+Get-PowerBIWorkspace [-Scope <PowerBIUserScope>] [-Filter <String>] [-User <String>] [-Deleted] [-Orphaned]
  [-First <Int32>] [-Skip <Int32>] [-Include <ArtifactType[]>] [<CommonParameters>]
 ```
 
 ### Id
 ```
-Get-PowerBIWorkspace -Id <Guid> [-Scope <PowerBIUserScope>] [-Type <WorkspaceType>] [-Include <ArtifactType[]>] [<CommonParameters>]
+Get-PowerBIWorkspace -Id <Guid> [-Scope <PowerBIUserScope>] [-Include <ArtifactType[]>] [<CommonParameters>]
 ```
 
 ### Name
 ```
-Get-PowerBIWorkspace -Name <String> [-Scope <PowerBIUserScope>] [-Type <WorkspaceType>] [-Include <ArtifactType[]>]
+Get-PowerBIWorkspace -Name <String> [-Scope <PowerBIUserScope>] [-Include <ArtifactType[]>]
  [<CommonParameters>]
 ```
 
 ### All
 ```
-Get-PowerBIWorkspace [-Scope <PowerBIUserScope>] [-Filter <String>] [-User <String>] [-Deleted] [-Orphaned] [-Type <WorkspaceType>]
+Get-PowerBIWorkspace [-Scope <PowerBIUserScope>] [-Filter <String>] [-User <String>] [-Deleted] [-Orphaned]
  [-Include <ArtifactType[]>] [-All] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Retrieves a list of Power BI workspaces that match the specified search criteria and scope.
-By default (without -First parameter) it shows the first 100 workspaces assigned to the user. Use -First and -Skip to fetch more workspaces or use -All to return all workspaces.
+By default (without -First parameter) it shows the first 100 workspaces assigned to the user. Use -First and -Skip to fetch more workspaces or use -All to return all workspaces. The -First parameter can be used to return at most 5000 workspaces.
 Before you run this command, make sure you log in using Connect-PowerBIServiceAccount. 
 
 ## EXAMPLES
@@ -201,22 +201,6 @@ Type: PowerBIUserScope
 Parameter Sets: (All)
 Aliases:
 Accepted values: Individual, Organization
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Type
-Type of the workspace to return. Case sensitive search.
-
-```yaml
-Type: WorkspaceType
-Parameter Sets: List, Name, Id, All
-Aliases:
-Accepted values: Workspace, Group, PersonalGroup
 
 Required: False
 Position: Named
