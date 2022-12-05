@@ -285,6 +285,9 @@ Resolve-PowerBIError -Last
 
 This information can be useful for opening support tickets for Power BI.
 
+## Limitations
+- [Guest accounts and B2B](https://learn.microsoft.com/en-us/power-bi/guidance/whitepaper-azure-b2b-power-bi?WT.mc_id=DP-MVP-5003435) for Power BI is not supported for Power BI cmdlets. Only authentication within the same tenant directory is supported. 
+
 ## Issues and feedback
 
 If you find any bugs or would like to see certain functionality implemented for the PowerShell Cmdlets for Power BI, please [file an issue](https://github.com/Microsoft/powerbi-powershell/issues).
