@@ -133,7 +133,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Name of the dataset to return if one exists with that name. Case insensitive search.
+Name of the dataset to return if one exists with that name. Case insensitive search. Currently this is only supported when -Scope Organization is specified.
 
 ```yaml
 Type: String
