@@ -80,6 +80,7 @@
     "globalMetadata": {
     "apiPlatform": "powershell",
     "products": ["https://authoring-docs-microsoft.poolparty.biz/devrel/d3197845-b4ce-44c6-a237-cd4be160e76c"],
+    "uhfHeaderId": "MSDocsHeader-MSPowerBI",
     "breadcrumb_path": "/powershell/power-bi/bread/toc.json",
     "extendBreadcrumb": true
   },
