@@ -9,7 +9,7 @@ ms.service: powerbi
 ms.subservice: powerbi-service
 ms.topic: conceptual
 ms.date: 06/21/2018
-ms.author: mblythe
+ms.author: sabotchu
 ---
 
 # Microsoft Power BI Cmdlets for Windows PowerShell and PowerShell Core
