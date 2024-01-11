@@ -43,7 +43,7 @@ PS C:\> Copy-PowerBIReport -Name "Report Copy" -Id "bd200f64-46f1-4f82-b09f-c7fd
 
 Creates a copy of the report with ID "bd200f64-46f1-4f82-b09f-c7fd6818d67c"" from the workspace with the ID "6439d4d4-18c4-4762-b755-1f957d55383e" in 'My Workspace' as the target workspace, assigns the report copy the name "Report Copy", and binds it to the dataset with the ID "1b46e4dc-1299-425b-97aa-c10d51f82a06".
 
-### Example 1
+### Example 3
 ```powershell
 PS C:\> Copy-PowerBIReport -Name "Report Copy" -Id "30ca8f24-f628-45f7-a5ac-540c95e9b5e6"
 ```
