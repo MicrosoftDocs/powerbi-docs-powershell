@@ -27,7 +27,7 @@ Restore-PowerBIWorkspace [-Scope <PowerBIUserScope>] [-RestoredName <String>] -A
 ## DESCRIPTION
 Restores a deleted Power BI workspace with the owner set to the user that matches the specified email address.
 Only workspaces in the new workspace experiences are supported and only deleted workspaces that haven't reached the data retention policy to be completely removed.
-Only -Scope Organization is supported and you must have administrator rights (such as Office 365 Global Administrator or Power BI Service Administrator) to call this command.
+Only -Scope Organization is supported and you must have the appropriate permissions or role (such as Power BI Service Administrator) to call this command.
 You must have logged in previously before using Connect-PowerBIServiceAccount.
 
 ## EXAMPLES
