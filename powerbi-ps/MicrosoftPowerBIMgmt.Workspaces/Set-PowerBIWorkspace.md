@@ -31,7 +31,7 @@ Set-PowerBIWorkspace [-Scope <PowerBIUserScope>] -Id <Guid> -CapacityId <Guid> [
 ## DESCRIPTION
 Updates the name or description of a Power BI workspace.
 Only workspaces in the new workspace experiences preview are supported.
-Only -Scope Organization is supported and you must have the appropriate permissions or role (such as ower BI Service Administrator) to call this command.
+Only -Scope Organization is supported and you must have the appropriate permissions or role (such as Power BI Service Administrator) to call this command.
 Before you run this command, make sure you log in using Connect-PowerBIServiceAccount. 
 
 ## EXAMPLES
