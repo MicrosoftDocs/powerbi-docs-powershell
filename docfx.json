@@ -93,7 +93,9 @@
       "powerbi-ps*/**/*.*": "powerbi-admin"
     },
     "ms.topic": {
-      "powerbi-ps*/**/*.*": "reference"
+      "powerbi-ps*/**/*.*": "generated-reference",
+      "docs-conceptual*/**/*.*": "reference"
+      
     },
     "ms.devlang": {
       "powerbi-ps*/**/*.*": "powershell"
