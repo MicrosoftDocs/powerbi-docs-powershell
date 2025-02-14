@@ -4,10 +4,9 @@ description: Learn about the PowerShell Cmdlets that are available to manage you
 author: sabotchu
 manager: jinjma
 ms.reviewer: ''
-
 ms.service: powerbi
 ms.subservice: powerbi-service
-ms.topic: conceptual
+ms.topic: reference
 ms.date: 06/21/2018
 ms.author: sabotchu
 ---
