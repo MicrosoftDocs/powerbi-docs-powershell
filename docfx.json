@@ -94,7 +94,7 @@
     },
     "ms.topic": {
       "powerbi-ps*/**/*.*": "generated-reference",
-      "docs-conceptual*/**/*.*": "reference"
+      "docs-conceptual*/**/*.*": "article"
       
     },
     "ms.devlang": {
