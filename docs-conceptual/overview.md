@@ -21,7 +21,7 @@ Below is a table of the Power BI PowerShell modules covered in this reference.
 
 | Description | Module Name | PowerShell Gallery link |
 | ----------- | ----------- | ----------------------- |
-| Rollup module for Power BI Cmdlets | @MicrosoftPowerBIMgmt | [![MicrosoftPowerBIMgmt](https://img.shields.io/powershellgallery/v/MicrosoftPowerBIMgmt.svg?style=flat-square&label=MicrosoftPowerBIMgmt)](https://www.powershellgallery.com/packages/MicrosoftPowerBIMgmt/) |
+| Rollup module for Power BI Cmdlets | @MicrosoftPowerBIMgmt.Admin | [![MicrosoftPowerBIMgmt](https://img.shields.io/powershellgallery/v/MicrosoftPowerBIMgmt.svg?style=flat-square&label=MicrosoftPowerBIMgmt)](https://www.powershellgallery.com/packages/MicrosoftPowerBIMgmt/) |
 | Admin module for Power BI Cmdlets | @MicrosoftPowerBIMgmt.Admin | [![MicrosoftPowerBIMgmt.Admin](https://img.shields.io/powershellgallery/v/MicrosoftPowerBIMgmt.Profile.svg?style=flat-square&label=MicrosoftPowerBIMgmt.Admin)](https://www.powershellgallery.com/packages/MicrosoftPowerBIMgmt.Admin/) |
 | Capacities module for Power BI Cmdlets | @MicrosoftPowerBIMgmt.Capacities | [![MicrosoftPowerBIMgmt.Capacities](https://img.shields.io/powershellgallery/v/MicrosoftPowerBIMgmt.Profile.svg?style=flat-square&label=MicrosoftPowerBIMgmt.Capacities)](https://www.powershellgallery.com/packages/MicrosoftPowerBIMgmt.Capacities/) |
 | Data module for Power BI Cmdlets | @MicrosoftPowerBIMgmt.Data | [![MicrosoftPowerBIMgmt.Data](https://img.shields.io/powershellgallery/v/MicrosoftPowerBIMgmt.Profile.svg?style=flat-square&label=MicrosoftPowerBIMgmt.Data)](https://www.powershellgallery.com/packages/MicrosoftPowerBIMgmt.Data/) |
