@@ -1,15 +1,14 @@
 ---
 title: Power BI Cmdlets reference
 description: Learn about the PowerShell Cmdlets that are available to manage your Power BI tenant.
-author: sabotchu
+author: kfollis
 manager: jinjma
 ms.reviewer: ''
-
 ms.service: powerbi
 ms.subservice: powerbi-service
-ms.topic: conceptual
+ms.topic: overview
 ms.date: 06/21/2018
-ms.author: sabotchu
+ms.author: kfollis
 ---
 
 # Microsoft Power BI Cmdlets for Windows PowerShell and PowerShell Core
@@ -22,7 +21,7 @@ Below is a table of the Power BI PowerShell modules covered in this reference.
 
 | Description | Module Name | PowerShell Gallery link |
 | ----------- | ----------- | ----------------------- |
-| Rollup module for Power BI Cmdlets | MicrosoftPowerBIMgmt | [![MicrosoftPowerBIMgmt](https://img.shields.io/powershellgallery/v/MicrosoftPowerBIMgmt.svg?style=flat-square&label=MicrosoftPowerBIMgmt)](https://www.powershellgallery.com/packages/MicrosoftPowerBIMgmt/) |
+| Rollup module for Power BI Cmdlets | NA | [![MicrosoftPowerBIMgmt1.2.1111](https://img.shields.io/powershellgallery/v/MicrosoftPowerBIMgmt.svg?style=flat-square&label=MicrosoftPowerBIMgmt)](https://www.powershellgallery.com/packages/MicrosoftPowerBIMgmt/) |
 | Admin module for Power BI Cmdlets | @MicrosoftPowerBIMgmt.Admin | [![MicrosoftPowerBIMgmt.Admin](https://img.shields.io/powershellgallery/v/MicrosoftPowerBIMgmt.Profile.svg?style=flat-square&label=MicrosoftPowerBIMgmt.Admin)](https://www.powershellgallery.com/packages/MicrosoftPowerBIMgmt.Admin/) |
 | Capacities module for Power BI Cmdlets | @MicrosoftPowerBIMgmt.Capacities | [![MicrosoftPowerBIMgmt.Capacities](https://img.shields.io/powershellgallery/v/MicrosoftPowerBIMgmt.Profile.svg?style=flat-square&label=MicrosoftPowerBIMgmt.Capacities)](https://www.powershellgallery.com/packages/MicrosoftPowerBIMgmt.Capacities/) |
 | Data module for Power BI Cmdlets | @MicrosoftPowerBIMgmt.Data | [![MicrosoftPowerBIMgmt.Data](https://img.shields.io/powershellgallery/v/MicrosoftPowerBIMgmt.Profile.svg?style=flat-square&label=MicrosoftPowerBIMgmt.Data)](https://www.powershellgallery.com/packages/MicrosoftPowerBIMgmt.Data/) |
@@ -263,7 +262,7 @@ Get-PowerBITable -DatasetId 65d7d7e5-8af0-4e94-b20b-50a882ae15e1
 
 ### Call the Power BI Rest API
 
-For [Power BI API](https://docs.microsoft.com/en-us/rest/api/power-bi/) that lacks corresponding cmdlets, you can reuse the authenticated session from `Connect-PowerBIServiceAccount` to make custom REST requests:
+For [Power BI API](/rest/api/power-bi/) that lacks corresponding cmdlets, you can reuse the authenticated session from `Connect-PowerBIServiceAccount` to make custom REST requests:
 
 ```powershell
 Invoke-PowerBIRestMethod -Url 'reports/4eb4c303-d5ac-4a2d-bf1e-39b35075d983/Clone' -Method Post -Body ([pscustomobject]@{name='Cloned report'; targetModelId='adf823b5-a0de-4b9f-bcce-b17d774d2961'; targetWorkspaceId='45ee15a7-0e8e-45b0-8111-ea304ada8d7d'} | ConvertTo-Json -Depth 2 -Compress)
