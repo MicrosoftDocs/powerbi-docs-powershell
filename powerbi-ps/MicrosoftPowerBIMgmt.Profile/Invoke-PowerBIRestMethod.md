@@ -30,7 +30,7 @@ Before you run this command, make sure you log in using Connect-PowerBIServiceAc
 PS C:\> Invoke-PowerBIRestMethod -Url 'groups' -Method Get
 ```
 
-Invokes the URL https://api.powerbi.com/v1.0/myorg/groups with the GET method\verb.
+Invokes the URL `https://api.powerbi.com/v1.0/myorg/groups` with the GET method\verb.
 
 ## PARAMETERS
 
@@ -141,7 +141,7 @@ Accept wildcard characters: False
 ```
 
 ### -Url
-Relative or absolute URL of the Power BI entity you want to access. For example, if you want to access https://api.powerbi.com/v1.0/myorg/groups, then specify 'groups', or pass in the entire URL.
+Relative or absolute URL of the Power BI entity you want to access. For example, if you want to access `https://api.powerbi.com/v1.0/myorg/groups`, then specify 'groups', or pass in the entire URL.
 
 ```yaml
 Type: String
