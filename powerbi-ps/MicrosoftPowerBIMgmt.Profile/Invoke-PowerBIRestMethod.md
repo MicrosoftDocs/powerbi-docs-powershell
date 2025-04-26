@@ -30,7 +30,7 @@ Before you run this command, make sure you log in using Connect-PowerBIServiceAc
 PS C:\> Invoke-PowerBIRestMethod -Url 'groups' -Method Get
 ```
 
-Invokes the URL https://api.powerbi.com/v1.0/myorg/groups with the GET method\verb.
+Invokes the URL `https://api.powerbi.com/v1.0/myorg/groups` with the GET method\verb.
 
 ## PARAMETERS
 
