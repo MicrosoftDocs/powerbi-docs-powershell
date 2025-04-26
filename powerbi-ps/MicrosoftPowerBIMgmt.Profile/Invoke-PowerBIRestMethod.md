@@ -141,7 +141,7 @@ Accept wildcard characters: False
 ```
 
 ### -Url
-Relative or absolute URL of the Power BI entity you want to access. For example, if you want to access https://api.powerbi.com/v1.0/myorg/groups, then specify 'groups', or pass in the entire URL.
+Relative or absolute URL of the Power BI entity you want to access. For example, if you want to access `https://api.powerbi.com/v1.0/myorg/groups`, then specify 'groups', or pass in the entire URL.
 
 ```yaml
 Type: String
