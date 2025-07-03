@@ -1,0 +1,168 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Reports.New-PowerBIReport
+name: New-PowerBIReport
+module: MicrosoftPowerBIMgmt.Reports
+isPreview: false
+summary: |-
+  Creates a Power BI report.
+description: |-
+  Loads a Power BI report from a pbix file and deploys it to the Power BI service.
+  Before you run this command, make sure you log in using Connect-PowerBIServiceAccount.
+parameters:
+  cmdletParameters:
+  - name: ConflictAction
+    type: <xref href="ImportConflictHandlerModeEnum" data-throw-if-not-resolved="False" />
+    description: |-
+      Determines what to do if a dataset with the same name already exists. Default value is 'CreateOrOverwrite'
+    acceptedValues:
+    - Ignore
+    - Abort
+    - Overwrite
+    - CreateOrOverwrite
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Name
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      The report name. If not set, the file name will be used.
+    aliases:
+    - ReportName
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Path
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      The path to the pbix file.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Timeout
+    type: <xref href="Int32" data-throw-if-not-resolved="False" />
+    description: |-
+      The number of seconds to wait for the service. If not set no timeout will be used.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Workspace
+    type: <xref href="Workspace" data-throw-if-not-resolved="False" />
+    description: |-
+      The workspace to deploy the report to.
+    aliases:
+    - Group
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Workspace
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: WorkspaceId
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      The id of the workspace to deploy the report to
+    aliases:
+    - GroupId
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: WorkspaceId
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    New-PowerBIReport
+        [-Path] <String>
+        [-Name <String>]
+        [-WorkspaceId <Guid>]
+        [-ConflictAction <ImportConflictHandlerModeEnum>]
+        [-Timeout <Int32>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: WorkspaceId
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    New-PowerBIReport
+        [-Path] <String>
+        [-Name <String>]
+        [-Workspace <Workspace>]
+        [-ConflictAction <ImportConflictHandlerModeEnum>]
+        [-Timeout <Int32>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Workspace
+  isDefault: false
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="Microsoft.PowerBI.Common.Api.Reports.Report" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```
+    PS C:\> New-PowerBIReport -Path '.\report.pbix' -Name 'Report'
+    ```
+
+    Adds the report to the personal Workspace.
+- title: Example 2
+  description: |-
+    ```
+    PS C:\> New-PowerBIReport -Path '.\report.pbix' -Name 'Report' -Workspace ( Get-PowerBIWorkspace -Name 'Team Workspace' )
+    ```
+
+    Adds the report to the Team Workspace.
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Reports.dll-Help.xml
+  HelpUri: 
+  Module Name: MicrosoftPowerBIMgmt.Reports
+  PlatyPS schema version: 2024-05-01

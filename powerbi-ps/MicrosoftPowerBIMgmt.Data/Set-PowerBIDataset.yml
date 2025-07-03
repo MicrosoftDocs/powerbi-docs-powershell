@@ -1,0 +1,184 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Data.Set-PowerBIDataset
+name: Set-PowerBIDataset
+module: MicrosoftPowerBIMgmt.Data
+isPreview: false
+summary: |-
+  Updates the properties for the specified Power BI dataset.
+description: |-
+  Updates the properties for the specified Power BI dataset.
+  Before you run this command, make sure you log in using Connect-PowerBIServiceAccount.
+parameters:
+  cmdletParameters:
+  - name: Id
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the dataset
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: DatasetId
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: ObjectAndId
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Name
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      Name of the dataset
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: DatasetName
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: ObjectAndName
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: TargetStorageMode
+    type: <xref href="DatasetStorageMode" data-throw-if-not-resolved="False" />
+    description: |-
+      Target storage mode of the dataset
+    acceptedValues:
+    - Abf
+    - PremiumFiles
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Workspace
+    type: <xref href="Workspace" data-throw-if-not-resolved="False" />
+    description: |-
+      Workspace containing the dataset
+    aliases:
+    - Group
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: ObjectAndId
+      position: Named
+      isRequired: false
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: ObjectAndName
+      position: Named
+      isRequired: false
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: WorkspaceId
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the workspace containing the dataset
+    aliases:
+    - GroupId
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: DatasetId
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: DatasetName
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Set-PowerBIDataset
+        -Id <Guid>
+        -TargetStorageMode <DatasetStorageMode>
+        [-WorkspaceId <Guid>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: DatasetId
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Set-PowerBIDataset
+        -Id <Guid>
+        -TargetStorageMode <DatasetStorageMode>
+        [-Workspace <Workspace>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: ObjectAndId
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Set-PowerBIDataset
+        -Name <String>
+        -TargetStorageMode <DatasetStorageMode>
+        [-WorkspaceId <Guid>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: DatasetName
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Set-PowerBIDataset
+        -Name <String>
+        -TargetStorageMode <DatasetStorageMode>
+        [-Workspace <Workspace>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: ObjectAndName
+  isDefault: false
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    Microsoft.PowerBI.Common.Api.Workspaces.Workspace
+outputs:
+- name: <xref href="Microsoft.PowerBI.Common.Api.Datasets.Dataset" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```powershell
+    PS C:\> Set-PowerBIDataset -Id c47f6cff-70de-4837-a094-93a6f26e20bf -TargetStorageMode PremiumFiles
+    ```
+
+    Updates the specified datset with target storage mode PremiumFiles.
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Data.dll-Help.xml
+  HelpUri: 
+  Module Name: MicrosoftPowerBIMgmt.Data
+  PlatyPS schema version: 2024-05-01

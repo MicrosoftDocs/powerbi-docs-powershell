@@ -1,0 +1,354 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Workspaces.Get-PowerBIWorkspace
+name: Get-PowerBIWorkspace
+module: MicrosoftPowerBIMgmt.Workspaces
+isPreview: false
+summary: |-
+  Returns a list of Power BI workspaces.
+description: |-
+  Retrieves a list of Power BI workspaces that match the specified search criteria and scope.
+  By default (without -First parameter) it shows the first 100 workspaces assigned to the user. Use -First and -Skip to fetch more workspaces or use -All to return all workspaces. The -First parameter can be used to return at most 5000 workspaces.
+  Before you run this command, make sure you log in using Connect-PowerBIServiceAccount.
+parameters:
+  cmdletParameters:
+  - name: All
+    type: <xref href="SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates to show all the workspaces. -First and -Skip cannot be used with this parameter.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: All
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Deleted
+    type: <xref href="SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates to show only deleted workspaces. Only supported when -Scope Organization is specified.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: List
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: All
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Filter
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      OData filter, case-sensitive (element names start lowercase).
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: List
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: All
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: First
+    type: <xref href="Int32" data-throw-if-not-resolved="False" />
+    description: |-
+      First (top) list of results. This value defaults to 100.
+    aliases:
+    - Top
+    defaultValue: "100"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: List
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Id
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the workspace to return.
+    aliases:
+    - GroupId
+    - WorkspaceId
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Id
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Include
+    type: <xref href="ArtifactType" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Retrieves related artifacts associated with the Power BI workspace. Only available when -Scope is Organization.
+    acceptedValues:
+    - Reports
+    - Dashboards
+    - Datasets
+    - Dataflows
+    - Workbooks
+    - All
+    aliases:
+    - Expand
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Name
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      Name of the workspace to return if one exists with that name. Case insensitive search.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Name
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Orphaned
+    type: <xref href="SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates to show only orphaned workspaces. Only supported when -Scope Organization is specified.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: List
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: All
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Scope
+    type: <xref href="PowerBIUserScope" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates scope of the call. Individual returns only workspaces assigned to the caller; Organization returns all workspaces within a tenant (must be an administrator to initiate). Individual is the default.
+    acceptedValues:
+    - Individual
+    - Organization
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Skip
+    type: <xref href="Int32" data-throw-if-not-resolved="False" />
+    description: |-
+      Skips the first set of results.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: List
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Type
+    type: <xref href="WorkspaceType" data-throw-if-not-resolved="False" />
+    description: |-
+      Type of the workspace to return. Case sensitive search.
+    acceptedValues:
+    - Workspace
+    - Group
+    - PersonalGroup
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: List
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: Name
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: Id
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: All
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: User
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      Filter workspaces to show ones which the user is contained within. Only available when -Scope is Organization.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: List
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: All
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Get-PowerBIWorkspace
+        [-Scope <PowerBIUserScope>]
+        [-Filter <String>]
+        [-User <String>]
+        [-Deleted]
+        [-Orphaned]
+        [-Type <WorkspaceType>]
+        [-First <Int32>]
+        [-Skip <Int32>]
+        [-Include <ArtifactType[]>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: List
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Get-PowerBIWorkspace
+        -Id <Guid>
+        [-Scope <PowerBIUserScope>]
+        [-Type <WorkspaceType>]
+        [-Include <ArtifactType[]>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Id
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Get-PowerBIWorkspace
+        -Name <String>
+        [-Scope <PowerBIUserScope>]
+        [-Type <WorkspaceType>]
+        [-Include <ArtifactType[]>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Name
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Get-PowerBIWorkspace
+        [-Scope <PowerBIUserScope>]
+        [-Filter <String>]
+        [-User <String>]
+        [-Deleted]
+        [-Orphaned]
+        [-Type <WorkspaceType>]
+        [-Include <ArtifactType[]>]
+        [-All]
+        [<CommonParameters>]
+    ```
+  parameterSetName: All
+  isDefault: false
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="System.Collections.Generic.IEnumerable`1" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```powershell
+    PS C:\> Get-PowerBIWorkspace
+    ```
+
+    Returns the first 100 Power BI workspaces the calling user is assigned to (-Scope Individual).
+- title: Example 2
+  description: |-
+    ```powershell
+    PS C:\> Get-PowerBIWorkspace -All
+    ```
+
+    Returns all Power BI workspaces the calling user is assigned to.
+- title: Example 3
+  description: |-
+    ```powershell
+    PS C:\> Get-PowerBIWorkspace -Scope Organization -Filter "tolower(name) eq 'contoso sales'"
+    ```
+
+    Returns a workspace named 'Contoso Sales' (case insensitive with tolower) within the user's organization.
+- title: Example 3
+  description: |-
+    ```powershell
+    PS C:\> Get-PowerBIWorkspace -Scope Organization -Include All
+    ```
+
+    Returns all Power BI workspaces along with related reports, dashboards, datasets, dataflows and workbooks within the user's organization.
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Workspaces.dll-Help.xml
+  HelpUri: https://docs.microsoft.com/en-us/powershell/module/microsoftpowerbimgmt.workspaces/get-powerbiworkspace?view=powerbi-ps
+  Module Name: MicrosoftPowerBIMgmt.Workspaces
+  PlatyPS schema version: 2024-05-01

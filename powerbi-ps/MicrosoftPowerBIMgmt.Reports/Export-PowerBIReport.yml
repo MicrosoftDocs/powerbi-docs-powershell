@@ -1,0 +1,95 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Reports.Export-PowerBIReport
+name: Export-PowerBIReport
+module: MicrosoftPowerBIMgmt.Reports
+isPreview: false
+summary: |-
+  Exports a Power BI report to the .pbix file format.
+description: |-
+  Saves a Power BI report from the Power BI service into a .pbix file that can be loaded by the Power BI Desktop or uploaded back to Power BI service.
+  Before you run this command, make sure you log in using Connect-PowerBIServiceAccount.
+parameters:
+  cmdletParameters:
+  - name: Id
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the report to export.
+    aliases:
+    - ReportId
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: OutFile
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      Output file to save the exported report to. Path must not already exist.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: WorkspaceId
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the workspace containing the Power BI report to export.
+    aliases:
+    - GroupId
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Export-PowerBIReport
+        [-WorkspaceId <Guid>]
+        -Id <Guid>
+        -OutFile <String>
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```powershell
+    PS C:\> Export-PowerBIReport -Id 9b519499-5ba1-4f1c-878b-be3a69f1791f -OutFile .\Sales.pbix
+    ```
+
+    Saves report with ID 9b519499-5ba1-4f1c-878b-be3a69f1791f into a file named Sales.pbix in your current working directory ($PWD).
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Reports.dll-Help.xml
+  HelpUri: https://docs.microsoft.com/en-us/powershell/module/microsoftpowerbimgmt.reports/export-powerbireport?view=powerbi-ps
+  Module Name: MicrosoftPowerBIMgmt.Reports
+  PlatyPS schema version: 2024-05-01

@@ -1,0 +1,58 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Workspaces.New-PowerBIWorkspace
+name: New-PowerBIWorkspace
+module: MicrosoftPowerBIMgmt.Workspaces
+isPreview: false
+summary: |-
+  Creates a new Power BI workspace.
+description: |-
+  Creates a new Power BI workspace with the current user as the workspace administrator.
+parameters:
+  cmdletParameters:
+  - name: Name
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      The name to give to the new workspace. If the name matches another workspace in the organization, the operation will fail.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    New-PowerBIWorkspace
+        -Name <String>
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```powershell
+    PS C:\> New-PowerBIWorkspace -Name "New Workspace"
+    ```
+
+    Creates a new Power BI workspace called "New Workspace" and adds the current user as the workspace administrator.
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Workspaces.dll-Help.xml
+  HelpUri: 
+  Module Name: MicrosoftPowerBIMgmt.Workspaces
+  PlatyPS schema version: 2024-05-01

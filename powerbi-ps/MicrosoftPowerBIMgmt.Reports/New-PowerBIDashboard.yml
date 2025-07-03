@@ -1,0 +1,117 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Reports.New-PowerBIDashboard
+name: New-PowerBIDashboard
+module: MicrosoftPowerBIMgmt.Reports
+isPreview: false
+summary: |-
+  Creates a new empty Power BI dashboard.
+description: |-
+  Creates a new empty dashboard in "My Workspace" or in a specified workspace.
+parameters:
+  cmdletParameters:
+  - name: Name
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      Name of the dashboard.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Workspace
+    type: <xref href="Workspace" data-throw-if-not-resolved="False" />
+    description: |-
+      Workspace object, as returned by the Get-PowerBIWorkspace cmdlet, in which the dashboard should be created.
+    aliases:
+    - Group
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: NameAndObject
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: WorkspaceId
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the workspace in which the dashboard should be created.
+    aliases:
+    - GroupId
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: NameAndIds
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    New-PowerBIDashboard
+        -Name <String>
+        [<CommonParameters>]
+    ```
+  parameterSetName: NameOnly
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    New-PowerBIDashboard
+        -Name <String>
+        -WorkspaceId <Guid>
+        [<CommonParameters>]
+    ```
+  parameterSetName: NameAndIds
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    New-PowerBIDashboard
+        -Name <String>
+        -Workspace <Workspace>
+        [<CommonParameters>]
+    ```
+  parameterSetName: NameAndObject
+  isDefault: false
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="Microsoft.PowerBI.Common.Api.Reports.Dashboard" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```powershell
+    PS C:\> New-PowerBIDashboard -Name "New Dashboard"
+    ```
+
+    Creates a new dashboard called "New Dashboard" in "My Workspace".
+- title: Example 2
+  description: |-
+    ```powershell
+    PS C:\> New-PowerBIDashboard -Name "New Dashboard" -WorkspaceId 084d15de-4c96-4a66-97b4-c60914a0973c
+    ```
+
+    Creates a new dashboard called "New Dashboard" in an existing workspace with ID "084d15de-4c96-4a66-97b4-c60914a0973c".
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Reports.dll-Help.xml
+  HelpUri: 
+  Module Name: MicrosoftPowerBIMgmt.Reports
+  PlatyPS schema version: 2024-05-01

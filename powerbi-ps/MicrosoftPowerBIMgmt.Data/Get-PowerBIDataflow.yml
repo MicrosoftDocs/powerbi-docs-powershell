@@ -1,0 +1,323 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Data.Get-PowerBIDataflow
+name: Get-PowerBIDataflow
+module: MicrosoftPowerBIMgmt.Data
+isPreview: false
+summary: |-
+  Returns a list of Power BI dataflows.
+description: |-
+  Retrieves a list of Power BI dataflows that match the specified search criteria and scope.
+  For -Scope Individual, dataflows are returned only from the specified workspace, using the given -Workspace or -WorkspaceId parameters.
+  For -Scope Organization, dataflows could be returned from the entire user's organization.
+  Before you run this command, make sure you log in using Connect-PowerBIServiceAccount.
+parameters:
+  cmdletParameters:
+  - name: Filter
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      OData filter, case-sensitive (element names start lowercase). Only supported when -Scope Organization is specified.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: List
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: WorkspaceAndList
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: First
+    type: <xref href="Int32" data-throw-if-not-resolved="False" />
+    description: |-
+      First (top) list of results.
+    aliases:
+    - Top
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: List
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: WorkspaceAndList
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Id
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the dataflow to return.
+    aliases:
+    - DataflowId
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Id
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: WorkspaceAndId
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Name
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      Name of the dataflow to return if one exists with that name. Case insensitive search.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Name
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: WorkspaceAndName
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Scope
+    type: <xref href="PowerBIUserScope" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates the scope of the call. Individual scope must be run with -Workspace or -WorkspaceId parameters. Organization scope returns all dataflows within a tenant (must be an administrator to initiate). Individual is the default.
+    acceptedValues:
+    - Individual
+    - Organization
+    defaultValue: Individual
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Skip
+    type: <xref href="Int32" data-throw-if-not-resolved="False" />
+    description: |-
+      Skips the first set of results.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: List
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: WorkspaceAndList
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Workspace
+    type: <xref href="Workspace" data-throw-if-not-resolved="False" />
+    description: |-
+      Workspace to filter results to, only dataflows belonging to that workspace are shown.
+      Supports pipelining of Cmdlets that return Workspace objects.
+    aliases:
+    - Group
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: WorkspaceAndId
+      position: Named
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: WorkspaceAndName
+      position: Named
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: WorkspaceAndList
+      position: Named
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: WorkspaceId
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the workspace to filter results to, only dataflows belonging to that workspace are shown.
+    aliases:
+    - GroupId
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: List
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: Id
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: Name
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Get-PowerBIDataflow
+        [-Scope <PowerBIUserScope>]
+        [-Filter <String>]
+        [-First <Int32>]
+        [-Skip <Int32>]
+        [-WorkspaceId <Guid>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: List
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Get-PowerBIDataflow
+        -Id <Guid>
+        [-Scope <PowerBIUserScope>]
+        [-WorkspaceId <Guid>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Id
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Get-PowerBIDataflow
+        -Id <Guid>
+        -Workspace <Workspace>
+        [-Scope <PowerBIUserScope>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: WorkspaceAndId
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Get-PowerBIDataflow
+        -Name <String>
+        [-Scope <PowerBIUserScope>]
+        [-WorkspaceId <Guid>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Name
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Get-PowerBIDataflow
+        -Name <String>
+        -Workspace <Workspace>
+        [-Scope <PowerBIUserScope>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: WorkspaceAndName
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Get-PowerBIDataflow
+        -Workspace <Workspace>
+        [-Scope <PowerBIUserScope>]
+        [-Filter <String>]
+        [-First <Int32>]
+        [-Skip <Int32>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: WorkspaceAndList
+  isDefault: false
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```powershell
+    PS C:\> Get-PowerBIDataflow -WorkspaceId ed451706-2b02-430c-b25c-20c0842c6375
+    ```
+
+    Returns a list of all Power BI dataflows in workpsace with ID ed451706-2b02-430c-b25c-20c0842c6375 that the user has access to.
+- title: Example 2
+  description: |-
+    ```powershell
+    PS C:\> Get-PowerBIDataflow -Scope Organization
+    ```
+
+    Returns a list of all Power BI dataflows within a user's organization.
+- title: Example 3
+  description: |-
+    ```powershell
+    PS C:\> Get-PowerBIDataflow -Name "MyDataflow" -Scope Organization
+    ```
+
+    Returns a dataflow with the Name "MyDataflow" from within all the organization.
+- title: Example 4
+  description: |-
+    ```powershell
+    PS C:\> Get-PowerBIDataflow -WorkspaceId ed451706-2b02-430c-b25c-20c0842c6375 -First 20
+    ```
+
+    Returns a list of the first 20 dataflows in a workspace with ID ed451706-2b02-430c-b25c-20c0842c6375 that the user has access to.
+- title: Example 5
+  description: |-
+    ```powershell
+    PS C:\> Get-PowerBIDataflow -WorkspaceId ed451706-2b02-430c-b25c-20c0842c6375 -Id 672403a7-34b7-493c-8ab1-3f1066573dc5
+    ```
+
+    Returns a dataflow with ID 672403a7-34b7-493c-8ab1-3f1066573dc5 in a workspace with ID ed451706-2b02-430c-b25c-20c0842c6375.
+- title: Example 6
+  description: |-
+    ```powershell
+    PS C:\> Get-PowerBIDataflow -Scope Organization -Filter "configuredBy eq 'john@contoso.com'"
+    ```
+
+    Returns all dataflows configured by 'john@contoso.com' within the user's organization.
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Data.dll-Help.xml
+  HelpUri: https://docs.microsoft.com/en-us/powershell/module/microsoftpowerbimgmt.data/get-powerbidataflow?view=powerbi-ps
+  Module Name: MicrosoftPowerBIMgmt.Data
+  PlatyPS schema version: 2024-05-01

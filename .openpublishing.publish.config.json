@@ -23,10 +23,7 @@
         "docset_prebuild": [
           "_dependentPackages/MAML2Yaml/tools/Run.ps1"
         ]
-      },
-      "monikerPath": [
-        "mapping/MAML2Yaml/monikerMapping.json"
-      ]
+      }
     }
   ],
   "notification_subscribers": [],
@@ -39,7 +36,7 @@
     {
       "path_to_root": "_themes",
       "url": "https://github.com/Microsoft/templates.docs.msft",
-      "branch": "main",
+      "branch": "pr-993197",
       "branch_mapping": {}
     }
   ],

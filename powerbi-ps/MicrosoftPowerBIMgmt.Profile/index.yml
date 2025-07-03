@@ -1,0 +1,24 @@
+### YamlMime:PowerShellModule1
+uid: MicrosoftPowerBIMgmt.Profile
+name: MicrosoftPowerBIMgmt.Profile Module
+isPreview: false
+cmdletGroups:
+- title: MicrosoftPowerBIMgmt.Profile Cmdlets
+  cmdlets:
+  - MicrosoftPowerBIMgmt.Profile.Connect-PowerBIServiceAccount
+  - MicrosoftPowerBIMgmt.Profile.Disconnect-PowerBIServiceAccount
+  - MicrosoftPowerBIMgmt.Profile.Get-PowerBIAccessToken
+  - MicrosoftPowerBIMgmt.Profile.Invoke-PowerBIRestMethod
+  - MicrosoftPowerBIMgmt.Profile.Resolve-PowerBIError
+description: |-
+  PowerShell cmdlets for managing connections to the Power BI service.
+metadata:
+  Module Name: MicrosoftPowerBIMgmt.Profile
+  Module Guid: 53a44a15-6234-40b1-9797-b8142e57fac1
+  HelpInfoUri: https://go.microsoft.com/fwlink/?linkid=2002111&clcid=0x409
+  Help Version:
+    ? Please enter version of help manually (X.X.X.X) format: 
+    : 
+  Locale: en-US
+  PlatyPS schema version: 2024-05-01
+  document type: module

@@ -1,0 +1,201 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Data.Get-PowerBIDataflowDatasource
+name: Get-PowerBIDataflowDatasource
+module: MicrosoftPowerBIMgmt.Data
+isPreview: false
+summary: |-
+  Returns a list of Power BI data sources for the given Dataflow.
+description: |-
+  Retrieves a list of Power BI data sources under the specified dataflow that match the specified search criteria and scope.
+  Data sources connected to Dataflows doesn't have a Name value, so there is no 'Name' parameter.
+  For -Scope Individual, user must specify the dataflow's workspace, using the given -WorkspaceId value.
+  Before you run this command, make sure you log in using Connect-PowerBIServiceAccount.
+parameters:
+  cmdletParameters:
+  - name: Dataflow
+    type: <xref href="Dataflow" data-throw-if-not-resolved="False" />
+    description: |-
+      Dataflow object to retrieve and return data sources for.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: DataflowAndId
+      position: Named
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: DataflowAndList
+      position: Named
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: DataflowId
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the dataflow to retrieve and return data sources for.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: List
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: Id
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Id
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the data source to return.
+    aliases:
+    - DatasourceId
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Id
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: DataflowAndId
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Scope
+    type: <xref href="PowerBIUserScope" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates scope of the call. Individual returns only data sources from dataflows assigned to the caller; Organization returns data sources for all dataflows within a tenant (must be an administrator to initiate). Individual is the default.
+    acceptedValues:
+    - Individual
+    - Organization
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: WorkspaceId
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the workspace to filter results to. Only data sources belonging to that workspace are shown. Available only when -Scope is Individual.
+    aliases:
+    - GroupId
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Get-PowerBIDataflowDatasource
+        -DataflowId <Guid>
+        [-WorkspaceId <Guid>]
+        [-Scope <PowerBIUserScope>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: List
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Get-PowerBIDataflowDatasource
+        -DataflowId <Guid>
+        -Id <Guid>
+        [-WorkspaceId <Guid>]
+        [-Scope <PowerBIUserScope>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Id
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Get-PowerBIDataflowDatasource
+        -Dataflow <Dataflow>
+        -Id <Guid>
+        [-WorkspaceId <Guid>]
+        [-Scope <PowerBIUserScope>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: DataflowAndId
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Get-PowerBIDataflowDatasource
+        -Dataflow <Dataflow>
+        [-WorkspaceId <Guid>]
+        [-Scope <PowerBIUserScope>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: DataflowAndList
+  isDefault: false
+inputs:
+- name: <xref href="Microsoft.PowerBI.Common.Api.Dataflows.Dataflow" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```powershell
+    PS C:\> Get-PowerBIDatasource -DataflowId 23d088a0-a395-483e-b81c-54f51f3e4e3c -WorkspaceId ed451706-2b02-430c-b25c-20c0842c6375
+    ```
+
+    Returns all data sources in a Power BI dataflow with ID 23d088a0-a395-483e-b81c-54f51f3e4e3c, for a dataflow the calling user has access to in the given workspace.
+- title: Example 2
+  description: |-
+    ```powershell
+    PS C:\> Get-PowerBIDatasource -DataflowId 23d088a0-a395-483e-b81c-54f51f3e4e3c -Scope Organization
+    ```
+
+    Returns all data sources in a Power BI dataflow with ID 23d088a0-a395-483e-b81c-54f51f3e4e3c, for a dataflow in the calling user's organization.
+- title: Example 3
+  description: |-
+    ```powershell
+    PS C:\> Get-PowerBIDatasource -DataflowId 23d088a0-a395-483e-b81c-54f51f3e4e3c -WorkspaceId ed451706-2b02-430c-b25c-20c0842c6375 -Id a3066be2-ea12-4ae2-b8e9-b8006b1fbf61
+    ```
+
+    Returns a data source with ID a3066be2-ea12-4ae2-b8e9-b8006b1fbf61, in a dataflow with ID 23d088a0-a395-483e-b81c-54f51f3e4e3c the calling user has access to in the given workspace.
+- title: Example 4
+  description: |-
+    ```powershell
+    PS C:\> Get-PowerBIDataflow -Scope Organization -Name "MyDataflow" | Get-PowerBIDatasource -Scope Organization
+    ```
+
+    Returns all data sources in a Power BI dataflow with Name "MyDataflow", using a pipeline result from a call to Get-PowerBIDataflow.
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Data.dll-Help.xml
+  HelpUri: https://docs.microsoft.com/en-us/powershell/module/microsoftpowerbimgmt.data/get-powerbidataflowdatasource?view=powerbi-ps
+  Module Name: MicrosoftPowerBIMgmt.Data
+  PlatyPS schema version: 2024-05-01

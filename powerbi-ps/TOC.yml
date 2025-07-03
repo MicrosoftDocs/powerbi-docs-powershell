@@ -1,0 +1,213 @@
+items:
+- name: Cmdlet reference
+  items:
+  - name: MicrosoftPowerBIMgmt.Admin
+    items:
+    - name: Commands
+      uid: MicrosoftPowerBIMgmt.Admin
+    - name: Add-PowerBIEncryptionKey
+      uid: MicrosoftPowerBIMgmt.Admin.Add-PowerBIEncryptionKey
+      no-loc:
+      - Add-PowerBIEncryptionKey
+    - name: Get-PowerBIActivityEvent
+      uid: MicrosoftPowerBIMgmt.Admin.Get-PowerBIActivityEvent
+      no-loc:
+      - Get-PowerBIActivityEvent
+    - name: Get-PowerBIEncryptionKey
+      uid: MicrosoftPowerBIMgmt.Admin.Get-PowerBIEncryptionKey
+      no-loc:
+      - Get-PowerBIEncryptionKey
+    - name: Get-PowerBIWorkspaceEncryptionStatus
+      uid: MicrosoftPowerBIMgmt.Admin.Get-PowerBIWorkspaceEncryptionStatus
+      no-loc:
+      - Get-PowerBIWorkspaceEncryptionStatus
+    - name: Set-PowerBICapacityEncryptionKey
+      uid: MicrosoftPowerBIMgmt.Admin.Set-PowerBICapacityEncryptionKey
+      no-loc:
+      - Set-PowerBICapacityEncryptionKey
+    - name: Switch-PowerBIEncryptionKey
+      uid: MicrosoftPowerBIMgmt.Admin.Switch-PowerBIEncryptionKey
+      no-loc:
+      - Switch-PowerBIEncryptionKey
+    no-loc:
+    - MicrosoftPowerBIMgmt.Admin
+  - name: MicrosoftPowerBIMgmt.Capacities
+    items:
+    - name: Commands
+      uid: MicrosoftPowerBIMgmt.Capacities
+    - name: Get-PowerBICapacity
+      uid: MicrosoftPowerBIMgmt.Capacities.Get-PowerBICapacity
+      no-loc:
+      - Get-PowerBICapacity
+    no-loc:
+    - MicrosoftPowerBIMgmt.Capacities
+  - name: MicrosoftPowerBIMgmt.Data
+    items:
+    - name: Commands
+      uid: MicrosoftPowerBIMgmt.Data
+    - name: Add-PowerBIDataset
+      uid: MicrosoftPowerBIMgmt.Data.Add-PowerBIDataset
+      no-loc:
+      - Add-PowerBIDataset
+    - name: Add-PowerBIRow
+      uid: MicrosoftPowerBIMgmt.Data.Add-PowerBIRow
+      no-loc:
+      - Add-PowerBIRow
+    - name: Export-PowerBIDataflow
+      uid: MicrosoftPowerBIMgmt.Data.Export-PowerBIDataflow
+      no-loc:
+      - Export-PowerBIDataflow
+    - name: Get-PowerBIDataflow
+      uid: MicrosoftPowerBIMgmt.Data.Get-PowerBIDataflow
+      no-loc:
+      - Get-PowerBIDataflow
+    - name: Get-PowerBIDataflowDatasource
+      uid: MicrosoftPowerBIMgmt.Data.Get-PowerBIDataflowDatasource
+      no-loc:
+      - Get-PowerBIDataflowDatasource
+    - name: Get-PowerBIDataset
+      uid: MicrosoftPowerBIMgmt.Data.Get-PowerBIDataset
+      no-loc:
+      - Get-PowerBIDataset
+    - name: Get-PowerBIDatasource
+      uid: MicrosoftPowerBIMgmt.Data.Get-PowerBIDatasource
+      no-loc:
+      - Get-PowerBIDatasource
+    - name: Get-PowerBITable
+      uid: MicrosoftPowerBIMgmt.Data.Get-PowerBITable
+      no-loc:
+      - Get-PowerBITable
+    - name: New-PowerBIColumn
+      uid: MicrosoftPowerBIMgmt.Data.New-PowerBIColumn
+      no-loc:
+      - New-PowerBIColumn
+    - name: New-PowerBIDataset
+      uid: MicrosoftPowerBIMgmt.Data.New-PowerBIDataset
+      no-loc:
+      - New-PowerBIDataset
+    - name: New-PowerBITable
+      uid: MicrosoftPowerBIMgmt.Data.New-PowerBITable
+      no-loc:
+      - New-PowerBITable
+    - name: Remove-PowerBIRow
+      uid: MicrosoftPowerBIMgmt.Data.Remove-PowerBIRow
+      no-loc:
+      - Remove-PowerBIRow
+    - name: Set-PowerBIDataset
+      uid: MicrosoftPowerBIMgmt.Data.Set-PowerBIDataset
+      no-loc:
+      - Set-PowerBIDataset
+    - name: Set-PowerBITable
+      uid: MicrosoftPowerBIMgmt.Data.Set-PowerBITable
+      no-loc:
+      - Set-PowerBITable
+    no-loc:
+    - MicrosoftPowerBIMgmt.Data
+  - name: MicrosoftPowerBIMgmt.Profile
+    items:
+    - name: Commands
+      uid: MicrosoftPowerBIMgmt.Profile
+    - name: Connect-PowerBIServiceAccount
+      uid: MicrosoftPowerBIMgmt.Profile.Connect-PowerBIServiceAccount
+      no-loc:
+      - Connect-PowerBIServiceAccount
+    - name: Disconnect-PowerBIServiceAccount
+      uid: MicrosoftPowerBIMgmt.Profile.Disconnect-PowerBIServiceAccount
+      no-loc:
+      - Disconnect-PowerBIServiceAccount
+    - name: Get-PowerBIAccessToken
+      uid: MicrosoftPowerBIMgmt.Profile.Get-PowerBIAccessToken
+      no-loc:
+      - Get-PowerBIAccessToken
+    - name: Invoke-PowerBIRestMethod
+      uid: MicrosoftPowerBIMgmt.Profile.Invoke-PowerBIRestMethod
+      no-loc:
+      - Invoke-PowerBIRestMethod
+    - name: Resolve-PowerBIError
+      uid: MicrosoftPowerBIMgmt.Profile.Resolve-PowerBIError
+      no-loc:
+      - Resolve-PowerBIError
+    no-loc:
+    - MicrosoftPowerBIMgmt.Profile
+  - name: MicrosoftPowerBIMgmt.Reports
+    items:
+    - name: Commands
+      uid: MicrosoftPowerBIMgmt.Reports
+    - name: Copy-PowerBIReport
+      uid: MicrosoftPowerBIMgmt.Reports.Copy-PowerBIReport
+      no-loc:
+      - Copy-PowerBIReport
+    - name: Copy-PowerBITile
+      uid: MicrosoftPowerBIMgmt.Reports.Copy-PowerBITile
+      no-loc:
+      - Copy-PowerBITile
+    - name: Export-PowerBIReport
+      uid: MicrosoftPowerBIMgmt.Reports.Export-PowerBIReport
+      no-loc:
+      - Export-PowerBIReport
+    - name: Get-PowerBIDashboard
+      uid: MicrosoftPowerBIMgmt.Reports.Get-PowerBIDashboard
+      no-loc:
+      - Get-PowerBIDashboard
+    - name: Get-PowerBIImport
+      uid: MicrosoftPowerBIMgmt.Reports.Get-PowerBIImport
+      no-loc:
+      - Get-PowerBIImport
+    - name: Get-PowerBIReport
+      uid: MicrosoftPowerBIMgmt.Reports.Get-PowerBIReport
+      no-loc:
+      - Get-PowerBIReport
+    - name: Get-PowerBITile
+      uid: MicrosoftPowerBIMgmt.Reports.Get-PowerBITile
+      no-loc:
+      - Get-PowerBITile
+    - name: New-PowerBIDashboard
+      uid: MicrosoftPowerBIMgmt.Reports.New-PowerBIDashboard
+      no-loc:
+      - New-PowerBIDashboard
+    - name: New-PowerBIReport
+      uid: MicrosoftPowerBIMgmt.Reports.New-PowerBIReport
+      no-loc:
+      - New-PowerBIReport
+    - name: Remove-PowerBIReport
+      uid: MicrosoftPowerBIMgmt.Reports.Remove-PowerBIReport
+      no-loc:
+      - Remove-PowerBIReport
+    no-loc:
+    - MicrosoftPowerBIMgmt.Reports
+  - name: MicrosoftPowerBIMgmt.Workspaces
+    items:
+    - name: Commands
+      uid: MicrosoftPowerBIMgmt.Workspaces
+    - name: Add-PowerBIWorkspaceUser
+      uid: MicrosoftPowerBIMgmt.Workspaces.Add-PowerBIWorkspaceUser
+      no-loc:
+      - Add-PowerBIWorkspaceUser
+    - name: Get-PowerBIWorkspace
+      uid: MicrosoftPowerBIMgmt.Workspaces.Get-PowerBIWorkspace
+      no-loc:
+      - Get-PowerBIWorkspace
+    - name: Get-PowerBIWorkspaceMigrationStatus
+      uid: MicrosoftPowerBIMgmt.Workspaces.Get-PowerBIWorkspaceMigrationStatus
+      no-loc:
+      - Get-PowerBIWorkspaceMigrationStatus
+    - name: New-PowerBIWorkspace
+      uid: MicrosoftPowerBIMgmt.Workspaces.New-PowerBIWorkspace
+      no-loc:
+      - New-PowerBIWorkspace
+    - name: Remove-PowerBIWorkspaceUser
+      uid: MicrosoftPowerBIMgmt.Workspaces.Remove-PowerBIWorkspaceUser
+      no-loc:
+      - Remove-PowerBIWorkspaceUser
+    - name: Restore-PowerBIWorkspace
+      uid: MicrosoftPowerBIMgmt.Workspaces.Restore-PowerBIWorkspace
+      no-loc:
+      - Restore-PowerBIWorkspace
+    - name: Set-PowerBIWorkspace
+      uid: MicrosoftPowerBIMgmt.Workspaces.Set-PowerBIWorkspace
+      no-loc:
+      - Set-PowerBIWorkspace
+    no-loc:
+    - MicrosoftPowerBIMgmt.Workspaces
+metadata:
+  universal_conceptual_toc: /powershell/power-bi/toc.json

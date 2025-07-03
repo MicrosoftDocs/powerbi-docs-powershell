@@ -1,0 +1,33 @@
+### YamlMime:PowerShellModule1
+uid: MicrosoftPowerBIMgmt.Data
+name: MicrosoftPowerBIMgmt.Data Module
+isPreview: false
+cmdletGroups:
+- title: MicrosoftPowerBIMgmt.Data Cmdlets
+  cmdlets:
+  - MicrosoftPowerBIMgmt.Data.Add-PowerBIDataset
+  - MicrosoftPowerBIMgmt.Data.Add-PowerBIRow
+  - MicrosoftPowerBIMgmt.Data.Export-PowerBIDataflow
+  - MicrosoftPowerBIMgmt.Data.Get-PowerBIDataflow
+  - MicrosoftPowerBIMgmt.Data.Get-PowerBIDataflowDatasource
+  - MicrosoftPowerBIMgmt.Data.Get-PowerBIDataset
+  - MicrosoftPowerBIMgmt.Data.Get-PowerBIDatasource
+  - MicrosoftPowerBIMgmt.Data.Get-PowerBITable
+  - MicrosoftPowerBIMgmt.Data.New-PowerBIColumn
+  - MicrosoftPowerBIMgmt.Data.New-PowerBIDataset
+  - MicrosoftPowerBIMgmt.Data.New-PowerBITable
+  - MicrosoftPowerBIMgmt.Data.Remove-PowerBIRow
+  - MicrosoftPowerBIMgmt.Data.Set-PowerBIDataset
+  - MicrosoftPowerBIMgmt.Data.Set-PowerBITable
+description: |-
+  PowerShell cmdlets for managing and interacting with Power BI datasets and data sources.
+metadata:
+  Module Name: MicrosoftPowerBIMgmt.Data
+  Module Guid: c0e2ecd2-c21d-4126-9fd7-485856f0f7e8
+  HelpInfoUri: https://go.microsoft.com/fwlink/?linkid=2002111&clcid=0x409
+  Help Version:
+    ? Please enter version of help manually (X.X.X.X) format: 
+    : 
+  Locale: en-US
+  PlatyPS schema version: 2024-05-01
+  document type: module

@@ -1,0 +1,148 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Data.Export-PowerBIDataflow
+name: Export-PowerBIDataflow
+module: MicrosoftPowerBIMgmt.Data
+isPreview: false
+summary: |-
+  Exports a Power BI dataflow to the .json file format.
+description: |-
+  Export a Power BI dataflow from the Power BI service into a .json file that represents a Dataflow object.
+  For -Scope Individual, user must specify the dataflow's workspace, using the given -WorkspaceId value.
+  Before you run this command, make sure you log in using Connect-PowerBIServiceAccount.
+parameters:
+  cmdletParameters:
+  - name: Dataflow
+    type: <xref href="Dataflow" data-throw-if-not-resolved="False" />
+    description: |-
+      Dataflow for exporting.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Dataflow
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Id
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the dataflow to export.
+    aliases:
+    - DataflowId
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Id
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: OutFile
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      Output file to save the exported dataflow to. Path must not already exist.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Scope
+    type: <xref href="PowerBIUserScope" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates scope of the call. Individual works only with the -WorkspaceId parameter, which indicates the Workspace of the requested Dataflow. Organization exports the requested dataflow from within a tenant (must be an administrator to initiate). Individual is the default.
+    acceptedValues:
+    - Individual
+    - Organization
+    defaultValue: Individual
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: WorkspaceId
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the workspace containing the Power BI dataflow to export.
+    aliases:
+    - GroupId
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Export-PowerBIDataflow
+        -Id <Guid>
+        -OutFile <String>
+        [-WorkspaceId <Guid>]
+        [-Scope <PowerBIUserScope>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Id
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Export-PowerBIDataflow
+        -Dataflow <Dataflow>
+        -OutFile <String>
+        [-WorkspaceId <Guid>]
+        [-Scope <PowerBIUserScope>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Dataflow
+  isDefault: false
+inputs:
+- name: <xref href="Microsoft.PowerBI.Common.Api.Dataflows.Dataflow" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```powershell
+    PS C:\> Export-PowerBIDataflow -WorkspaceId ed451706-2b02-430c-b25c-20c0842c6375 -Id 9b519499-5ba1-4f1c-878b-be3a69f1791f -OutFile .\Sales.json
+    ```
+
+    Export dataflow with ID 9b519499-5ba1-4f1c-878b-be3a69f1791f from a workspace with Id ed451706-2b02-430c-b25c-20c0842c6375 into a file named Sales.json in your current working directory ($PWD).
+- title: Example 2
+  description: |-
+    ```powershell
+    PS C:\> Export-PowerBIDataflow -Id 9b519499-5ba1-4f1c-878b-be3a69f1791f -Scope Organization -OutFile .\Sales.json
+    ```
+
+    Export dataflow with ID 9b519499-5ba1-4f1c-878b-be3a69f1791f from within the user's organization into a file named Sales.json in the current working directory ($PWD).
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Data.dll-Help.xml
+  HelpUri: https://docs.microsoft.com/en-us/powershell/module/microsoftpowerbimgmt.data/export-powerbidataflow?view=powerbi-ps
+  Module Name: MicrosoftPowerBIMgmt.Data
+  PlatyPS schema version: 2024-05-01

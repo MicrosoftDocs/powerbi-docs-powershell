@@ -1,0 +1,162 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Data.Add-PowerBIRow
+name: Add-PowerBIRow
+module: MicrosoftPowerBIMgmt.Data
+isPreview: false
+summary: |-
+  Adds rows to the specified table in a Power BI dataset.
+description: |-
+  Inserts rows into a Power BI table contained within a dataset.
+parameters:
+  cmdletParameters:
+  - name: Dataset
+    type: <xref href="Dataset" data-throw-if-not-resolved="False" />
+    description: |-
+      A dataset containing the table where rows are to be stored.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Dataset
+      position: Named
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: DatasetId
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the dataset containing the table where rows are to be stored.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: DatasetId
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Rows
+    type: <xref href="System.Collections.Generic.List`1" data-throw-if-not-resolved="False" /><span>[</span><xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" /><span>]</span>
+    description: |-
+      An array of rows to be stored in the table.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: TableName
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      Name of the table.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Workspace
+    type: <xref href="Workspace" data-throw-if-not-resolved="False" />
+    description: |-
+      Workspace containing the dataset and table for row insertion.
+    aliases:
+    - Group
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: WorkspaceId
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the workspace containing the dataset and table for row insertion.
+    aliases:
+    - GroupId
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Add-PowerBIRow
+        -Dataset <Dataset>
+        -TableName <String>
+        -Rows <System.Collections.Generic.List`1[System.Management.Automation.PSObject]>
+        [-WorkspaceId <Guid>]
+        [-Workspace <Workspace>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Dataset
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Add-PowerBIRow
+        -DatasetId <Guid>
+        -TableName <String>
+        -Rows <System.Collections.Generic.List`1[System.Management.Automation.PSObject]>
+        [-WorkspaceId <Guid>]
+        [-Workspace <Workspace>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: DatasetId
+  isDefault: false
+inputs:
+- name: <xref href="Microsoft.PowerBI.Common.Api.Datasets.Dataset" data-throw-if-not-resolved="False" />
+  description: |-
+    Microsoft.PowerBI.Common.Api.Workspaces.Workspace
+outputs:
+- name: <xref href="Microsoft.PowerBI.Common.Api.Datasets.Dataset" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```powershell
+    PS C:\>Add-PowerBIRow -DataSetId 4b644350-f745-48dd-821c-f008350199a8 -TableName Table1 -Rows @{"Column1"="Value1";"Column2"="Value2"},@{"Column1"="Value1";"Column2"="Value2"}
+    ```
+
+    This example inserts two rows to Table1.
+- title: Example 2
+  description: |-
+    ```powershell
+    PS C:\>Add-PowerBIRow -DataSetId 4b644350-f745-48dd-821c-f008350199a8 -TableName Table1 -Rows (Import-Csv -Path ".\data.csv")
+    ```
+
+    This example inserts rows from CSV to Table1.
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Data.dll-Help.xml
+  HelpUri: 
+  Module Name: MicrosoftPowerBIMgmt.Data
+  PlatyPS schema version: 2024-05-01

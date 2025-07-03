@@ -1,0 +1,292 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Reports.Get-PowerBIDashboard
+name: Get-PowerBIDashboard
+module: MicrosoftPowerBIMgmt.Reports
+isPreview: false
+summary: |-
+  Returns a list of Power BI dashboards.
+description: |-
+  Retrieves a list of Power BI dashboards that match the specified search criteria and scope.
+  Before you run this command, make sure you log in using Connect-PowerBIServiceAccount.
+parameters:
+  cmdletParameters:
+  - name: Filter
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      OData filter, case-sensitive (element names start lowercase). Only supported when -Scope Organization is specified.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: List
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: ObjectAndList
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: First
+    type: <xref href="Int32" data-throw-if-not-resolved="False" />
+    description: |-
+      First (top) list of results.
+    aliases:
+    - Top
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: List
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: ObjectAndList
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Id
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the dashboard to return.
+    aliases:
+    - ImportId
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Id
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: ObjectAndId
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Name
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      Name of the dashboard to return if one exists with that name. Case insensitive search.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Name
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: ObjectAndName
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Scope
+    type: <xref href="PowerBIUserScope" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates the scope of the call. Individual returns only dashboards assigned to the caller; Organization returns all dashboards within a tenant (must be an administrator to initiate). Individual is the default.
+    acceptedValues:
+    - Individual
+    - Organization
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Skip
+    type: <xref href="Int32" data-throw-if-not-resolved="False" />
+    description: |-
+      Skips the first set of results.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: List
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: ObjectAndList
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Workspace
+    type: <xref href="Workspace" data-throw-if-not-resolved="False" />
+    description: |-
+      Workspace to filter results to; only dashboards that belong to that workspace are shown.
+    aliases:
+    - Group
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: ObjectAndId
+      position: Named
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: ObjectAndName
+      position: Named
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: ObjectAndList
+      position: Named
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: WorkspaceId
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the workspace to filter results to; only dashboards that belong to that workspace are shown.
+    aliases:
+    - GroupId
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: List
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: Id
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: Name
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Get-PowerBIDashboard
+        [-Scope <PowerBIUserScope>]
+        [-Filter <String>]
+        [-First <Int32>]
+        [-Skip <Int32>]
+        [-WorkspaceId <Guid>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: List
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Get-PowerBIDashboard
+        -Id <Guid>
+        [-Scope <PowerBIUserScope>]
+        [-WorkspaceId <Guid>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Id
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Get-PowerBIDashboard
+        -Id <Guid>
+        -Workspace <Workspace>
+        [-Scope <PowerBIUserScope>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: ObjectAndId
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Get-PowerBIDashboard
+        -Name <String>
+        [-Scope <PowerBIUserScope>]
+        [-WorkspaceId <Guid>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Name
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Get-PowerBIDashboard
+        -Name <String>
+        -Workspace <Workspace>
+        [-Scope <PowerBIUserScope>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: ObjectAndName
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Get-PowerBIDashboard
+        -Workspace <Workspace>
+        [-Scope <PowerBIUserScope>]
+        [-Filter <String>]
+        [-First <Int32>]
+        [-Skip <Int32>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: ObjectAndList
+  isDefault: false
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="System.Collections.Generic.IEnumerable`1" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```powershell
+    PS C:\> Get-PowerBIDashboard
+    ```
+
+    Returns all Power BI dashboards that the calling user is assigned to (-Scope Individual).
+- title: Example 2
+  description: |-
+    ```powershell
+    PS C:\> Get-PowerBIDashboard -Scope Organization -Name 'Contoso Sales'
+    ```
+
+    Returns a workspace named 'Contoso Sales' (case insensitive) within the user's organization.
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Reports.dll-Help.xml
+  HelpUri: https://docs.microsoft.com/en-us/powershell/module/microsoftpowerbimgmt.reports/get-powerbidashboard?view=powerbi-ps
+  Module Name: MicrosoftPowerBIMgmt.Reports
+  PlatyPS schema version: 2024-05-01

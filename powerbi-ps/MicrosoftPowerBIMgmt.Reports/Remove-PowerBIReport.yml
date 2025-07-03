@@ -1,0 +1,121 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Reports.Remove-PowerBIReport
+name: Remove-PowerBIReport
+module: MicrosoftPowerBIMgmt.Reports
+isPreview: false
+summary: |-
+  Deletes a Power BI report.
+description: |-
+  Removes a Power BI report from a workspace.
+  If no workspace is specified, your personal (My Workspace) is used.
+  Before you run this command, make sure you log in using Connect-PowerBIServiceAccount.
+parameters:
+  cmdletParameters:
+  - name: Id
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      Id of the report to be deleted.
+    aliases:
+    - ReportId
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Workspace
+    type: <xref href="Workspace" data-throw-if-not-resolved="False" />
+    description: |-
+      Workspace object that contains the report to be deleted.
+    aliases:
+    - Group
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Workspace
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: WorkspaceId
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      Id of the workspace that contains the report to be deleted.
+    aliases:
+    - GroupId
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: WorkspaceId
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Remove-PowerBIReport
+        -Id <Guid>
+        [<CommonParameters>]
+    ```
+  parameterSetName: MyWorkspace
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Remove-PowerBIReport
+        -Id <Guid>
+        -WorkspaceId <Guid>
+        [<CommonParameters>]
+    ```
+  parameterSetName: WorkspaceId
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Remove-PowerBIReport
+        -Id <Guid>
+        -Workspace <Workspace>
+        [<CommonParameters>]
+    ```
+  parameterSetName: Workspace
+  isDefault: false
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="System.Void" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```powershell
+    PS C:\> Remove-PowerBIReport -Id 12345-abc56-jkl56-700a0 -WorkspaceId ccd01-bif87-abc12-34efg
+    ```
+
+    Deletes a report with the GUID, '12345-abc56-jkl56-700a0', from the Workspace with ID of 'ccd01-bif87-abc12-34efg'.
+- title: Example 2
+  description: |-
+    ```powershell
+    PS C:\> Remove-PowerBIReport -Id 12345-abc56-jkl56-700a0
+    ```
+
+    Deletes a report with the GUID of '12345-abc56-jkl56-700a0' from your personal workspace.
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Reports.dll-Help.xml
+  HelpUri: https://docs.microsoft.com/en-us/powershell/module/microsoftpowerbimgmt.reports/remove-powerbireport?view=powerbi-ps
+  Module Name: MicrosoftPowerBIMgmt.Reports
+  PlatyPS schema version: 2024-05-01

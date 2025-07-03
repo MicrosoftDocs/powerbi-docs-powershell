@@ -1,0 +1,60 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Profile.Get-PowerBIAccessToken
+name: Get-PowerBIAccessToken
+module: MicrosoftPowerBIMgmt.Profile
+isPreview: false
+summary: |-
+  Gets the access token for your current Power BI authenticated session.
+description: |-
+  Returns the Power BI access token gathered from logged in Power BI profile.
+  Before you run this command, make sure you log in using Connect-PowerBIServiceAccount.
+parameters:
+  cmdletParameters:
+  - name: AsString
+    type: <xref href="SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates to return the access token as a string instead of a hashtable. The string contains the authentication type, such as "Bearer".
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Get-PowerBIAccessToken
+        [-AsString]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```powershell
+    PS C:\> $headers = Get-PowerBIAccessToken
+    PS C:\> Invoke-RestMethod -Headers $headers -Uri 'https://api.powerbi.com/v1.0/myorg/groups'
+    ```
+
+    Gets the Power BI access token as a hashtable and passes it to Invoke-RestMethod, as part of the header, to authenticate.
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Profile.dll-Help.xml
+  HelpUri: https://docs.microsoft.com/en-us/powershell/module/microsoftpowerbimgmt.profile/get-powerbiaccesstoken?view=powerbi-ps
+  Module Name: MicrosoftPowerBIMgmt.Profile
+  PlatyPS schema version: 2024-05-01

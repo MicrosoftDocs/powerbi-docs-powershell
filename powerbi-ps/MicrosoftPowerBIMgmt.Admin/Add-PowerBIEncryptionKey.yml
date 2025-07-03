@@ -1,0 +1,141 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Admin.Add-PowerBIEncryptionKey
+name: Add-PowerBIEncryptionKey
+module: MicrosoftPowerBIMgmt.Admin
+isPreview: false
+summary: |-
+  Adds an encryption key for Power BI workspaces assigned to a capacity.
+description: |-
+  Associates an encryption key for Power BI workspaces that is assigned to a premium capacity.
+  Make sure to grant wrap and unwrap key permissions for Power BI service in the Azure Key Vault.
+
+  Before you run this command, make sure you log in using Connect-PowerBIServiceAccount.
+  This cmdlet requires the calling user to be a tenant administrator of the Power BI service.
+parameters:
+  cmdletParameters:
+  - name: Activate
+    type: <xref href="SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates to activate any inactivated capacities to use this key for its encryption
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: DefaultAndActivate
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: Activate
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Default
+    type: <xref href="SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this key is set as default for the entire tenant.
+      Any new capacity creation will inherit this key upon creation.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: DefaultAndActivate
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: Default
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: KeyVaultKeyUri
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      Uri to the version of the "Azure Key Vault" key to be used. Only supports 4096 bytes key.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Name
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      The name of the encryption key.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Add-PowerBIEncryptionKey
+        -Name <String>
+        -KeyVaultKeyUri <String>
+        [-Default]
+        [-Activate]
+        [<CommonParameters>]
+    ```
+  parameterSetName: DefaultAndActivate
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Add-PowerBIEncryptionKey
+        -Name <String>
+        -KeyVaultKeyUri <String>
+        [-Default]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Add-PowerBIEncryptionKey
+        -Name <String>
+        -KeyVaultKeyUri <String>
+        [-Activate]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Activate
+  isDefault: false
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="Microsoft.PowerBI.Common.Api.Encryption.EncryptionKey" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```
+    PS C:\> Add-PowerBIEncryptionKey -Name 'Contoso Sales' -KeyVaultKeyUri 'https://contoso-vault2.vault.azure.net/keys/ContosoKeyVault/b2ab4ba1c7b341eea5ecaaa2wb54c4d2'
+    ```
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Admin.dll-Help.xml
+  HelpUri: 
+  Module Name: MicrosoftPowerBIMgmt.Admin
+  PlatyPS schema version: 2024-05-01

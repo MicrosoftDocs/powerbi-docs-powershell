@@ -1,0 +1,238 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Workspaces.Add-PowerBIWorkspaceUser
+name: Add-PowerBIWorkspaceUser
+module: MicrosoftPowerBIMgmt.Workspaces
+isPreview: false
+summary: |-
+  Gives permissions to a specified user to access a Power BI workspace.
+description: |-
+  Grants permissions to a specified user to access a Power BI workspace using the provided inputs and scope specified.
+  Before you run this command, make sure you log in using Connect-PowerBIServiceAccount.
+parameters:
+  cmdletParameters:
+  - name: AccessRight
+    type: <xref href="WorkspaceUserAccessRight" data-throw-if-not-resolved="False" />
+    description: |-
+      Permissions to assign to the user.
+    acceptedValues:
+    - Member
+    - Admin
+    - Contributor
+    - Viewer
+    aliases:
+    - UserAccessRight
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Id
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the workspace the user should be added to.
+    aliases:
+    - GroupId
+    - WorkspaceId
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: UserEmailWithId
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    - name: PrincipalTypeWithId
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Identifier
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      Identifier of the principal to add to the group. For Apps and Groups, this will be their object identifier (GUID). For users, this can be an email address.
+    aliases:
+    - PrincipalId
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: PrincipalTypeWithId
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: PrincipalTypeWithWorkspace
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: PrincipalType
+    type: <xref href="WorkspaceUserPrincipalType" data-throw-if-not-resolved="False" />
+    description: |-
+      The type of the principal to add to the group.
+    acceptedValues:
+    - App
+    - Group
+    - User
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: PrincipalTypeWithId
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: PrincipalTypeWithWorkspace
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Scope
+    type: <xref href="PowerBIUserScope" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates scope of the call. Individual operates against only workspaces assigned to the caller; Organization operates against all workspaces within a tenant (must be an administrator to initiate). Individual is the default.
+    acceptedValues:
+    - Individual
+    - Organization
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: UserPrincipalName
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      User Principal Name (or UPN, commonly an email address) for the user whose permissions need to be added.
+    aliases:
+    - UserEmailAddress
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: UserEmailWithId
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: UserEmailWithWorkspace
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Workspace
+    type: <xref href="Workspace" data-throw-if-not-resolved="False" />
+    description: |-
+      The workspace entity to add the user to.
+    aliases:
+    - Group
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: UserEmailWithWorkspace
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: PrincipalTypeWithWorkspace
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Add-PowerBIWorkspaceUser
+        -Id <Guid>
+        -UserPrincipalName <String>
+        -AccessRight <WorkspaceUserAccessRight>
+        [-Scope <PowerBIUserScope>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: UserEmailWithId
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Add-PowerBIWorkspaceUser
+        -Id <Guid>
+        -AccessRight <WorkspaceUserAccessRight>
+        -PrincipalType <WorkspaceUserPrincipalType>
+        -Identifier <String>
+        [-Scope <PowerBIUserScope>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: PrincipalTypeWithId
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Add-PowerBIWorkspaceUser
+        -UserPrincipalName <String>
+        -AccessRight <WorkspaceUserAccessRight>
+        -Workspace <Workspace>
+        [-Scope <PowerBIUserScope>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: UserEmailWithWorkspace
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Add-PowerBIWorkspaceUser
+        -AccessRight <WorkspaceUserAccessRight>
+        -Workspace <Workspace>
+        -PrincipalType <WorkspaceUserPrincipalType>
+        -Identifier <String>
+        [-Scope <PowerBIUserScope>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: PrincipalTypeWithWorkspace
+  isDefault: false
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```powershell
+    PS C:\> Add-PowerBIWorkspaceUser -Scope Organization -Id 23FCBDBD-A979-45D8-B1C8-6D21E0F4BE50 -UserEmailAddress john@contoso.com -AccessRight Admin
+    ```
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Workspaces.dll-Help.xml
+  HelpUri: https://docs.microsoft.com/en-us/powershell/module/microsoftpowerbimgmt.workspaces/add-powerbiworkspaceuser?view=powerbi-ps
+  Module Name: MicrosoftPowerBIMgmt.Workspaces
+  PlatyPS schema version: 2024-05-01

@@ -1,0 +1,145 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Workspaces.Restore-PowerBIWorkspace
+name: Restore-PowerBIWorkspace
+module: MicrosoftPowerBIMgmt.Workspaces
+isPreview: false
+summary: |-
+  Restores a deleted Power BI workspace.
+description: |-
+  Restores a deleted Power BI workspace with the owner set to the user that matches the specified email address.
+  Only workspaces in the new workspace experiences are supported and only deleted workspaces that haven't reached the data retention policy to be completely removed.
+  Only -Scope Organization is supported and you must have the appropriate permissions or role (such as Power BI Service Administrator) to call this command.
+  You must have logged in previously before using Connect-PowerBIServiceAccount.
+parameters:
+  cmdletParameters:
+  - name: AdminUserPrincipalName
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      User Principal Name (or UPN, commonly an email address) of the user who will become the admin of the restored workspace.
+    aliases:
+    - AdminEmailAddress
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Id
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the workspace to restore.
+    aliases:
+    - GroupId
+    - WorkspaceId
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Id
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: RestoredName
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      An optional new name to give to the restored workspace.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Scope
+    type: <xref href="PowerBIUserScope" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates scope of the call. Individual is not supported; Organization can restore any deleted workspaces within a tenant (must be an administrator to initiate) unless the workspace met its data retention policy and completed removal. Organization is the default.
+    acceptedValues:
+    - Individual
+    - Organization
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Workspace
+    type: <xref href="Workspace" data-throw-if-not-resolved="False" />
+    description: |-
+      The workspace entity to be restored.
+    aliases:
+    - Group
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Workspace
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Restore-PowerBIWorkspace
+        -Id <Guid>
+        -AdminUserPrincipalName <String>
+        [-Scope <PowerBIUserScope>]
+        [-RestoredName <String>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Id
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Restore-PowerBIWorkspace
+        -AdminUserPrincipalName <String>
+        -Workspace <Workspace>
+        [-Scope <PowerBIUserScope>]
+        [-RestoredName <String>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Workspace
+  isDefault: false
+inputs:
+- name: <xref href="System.Guid" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```powershell
+    PS C:\> Restore-PowerBIWorkspace -Id "3244f1c1-01cf-457f-9383-6035e4950fdc" -RestoredName "TestWorkspace" -AdminEmailAddress "john@contoso.com"
+    ```
+
+    Restores the workspace with the specified ID, assigns the user with the specified email address as the admin, and updates the name of the workspace to the specified name.
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Workspaces.dll-Help.xml
+  HelpUri: https://docs.microsoft.com/en-us/powershell/module/microsoftpowerbimgmt.workspaces/restore-powerbiworkspace?view=powerbi-ps
+  Module Name: MicrosoftPowerBIMgmt.Workspaces
+  PlatyPS schema version: 2024-05-01

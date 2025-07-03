@@ -1,0 +1,244 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Data.Get-PowerBIDatasource
+name: Get-PowerBIDatasource
+module: MicrosoftPowerBIMgmt.Data
+isPreview: false
+summary: |-
+  Returns a list of Power BI data sources.
+description: |-
+  Retrieves a list of Power BI data sources under the specified dataset along that match the specified search criteria and scope.
+  Before you run this command, make sure you log in using Connect-PowerBIServiceAccount.
+parameters:
+  cmdletParameters:
+  - name: Dataset
+    type: <xref href="Dataset" data-throw-if-not-resolved="False" />
+    description: |-
+      Dataset for returning data sources for.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: ObjectAndId
+      position: Named
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: ObjectAndName
+      position: Named
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: ObjectAndList
+      position: Named
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: DatasetId
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the dataset to return data sources for.
+    aliases:
+    - DatasetKey
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: List
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: Id
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: Name
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Id
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the data source to return.
+    aliases:
+    - DatasourceId
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Id
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: ObjectAndId
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Name
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      Name of the data source to return if one exists with that name. Case insensitive search.
+    aliases:
+    - DatasoureName
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Name
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: ObjectAndName
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Scope
+    type: <xref href="PowerBIUserScope" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates scope of the call. Individual returns only data sources assigned to the caller; Organization returns all data sources within a tenant (must be an administrator to initiate). Individual is the default.
+    acceptedValues:
+    - Individual
+    - Organization
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: WorkspaceId
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the workspace to filter results to, data sources only belonging to that workspace are shown. Only available when -Scope is Individual.
+    aliases:
+    - GroupId
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Get-PowerBIDatasource
+        -DatasetId <Guid>
+        [-WorkspaceId <Guid>]
+        [-Scope <PowerBIUserScope>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: List
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Get-PowerBIDatasource
+        -DatasetId <Guid>
+        -Id <Guid>
+        [-WorkspaceId <Guid>]
+        [-Scope <PowerBIUserScope>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Id
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Get-PowerBIDatasource
+        -DatasetId <Guid>
+        -Name <String>
+        [-WorkspaceId <Guid>]
+        [-Scope <PowerBIUserScope>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Name
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Get-PowerBIDatasource
+        -Dataset <Dataset>
+        -Id <Guid>
+        [-WorkspaceId <Guid>]
+        [-Scope <PowerBIUserScope>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: ObjectAndId
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Get-PowerBIDatasource
+        -Dataset <Dataset>
+        -Name <String>
+        [-WorkspaceId <Guid>]
+        [-Scope <PowerBIUserScope>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: ObjectAndName
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Get-PowerBIDatasource
+        -Dataset <Dataset>
+        [-WorkspaceId <Guid>]
+        [-Scope <PowerBIUserScope>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: ObjectAndList
+  isDefault: false
+inputs:
+- name: <xref href="Microsoft.PowerBI.Common.Api.Datasets.Dataset" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```powershell
+    PS C:\> Get-PowerBIDatasource -DatasetId 23d088a0-a395-483e-b81c-54f51f3e4e3c
+    ```
+
+    Returns all data sources in Power BI dataset with ID 23d088a0-a395-483e-b81c-54f51f3e4e3c, for dataset the calling user has access to.
+- title: Example 2
+  description: |-
+    ```powershell
+    PS C:\> Get-PowerBIDatasource -DatasetId 23d088a0-a395-483e-b81c-54f51f3e4e3c -Scope Organization
+    ```
+
+    Returns all data sources in Power BI dataset with ID 23d088a0-a395-483e-b81c-54f51f3e4e3c, for a dataset in the calling user's organization.
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Data.dll-Help.xml
+  HelpUri: https://docs.microsoft.com/en-us/powershell/module/microsoftpowerbimgmt.data/get-powerbidatasource?view=powerbi-ps
+  Module Name: MicrosoftPowerBIMgmt.Data
+  PlatyPS schema version: 2024-05-01

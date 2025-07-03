@@ -1,0 +1,35 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Admin.Get-PowerBIEncryptionKey
+name: Get-PowerBIEncryptionKey
+module: MicrosoftPowerBIMgmt.Admin
+isPreview: false
+summary: |-
+  Retrieves the encryption key for the tenant.
+description: |-
+  Retrieves the encryption key that is added by the tenant administrator for the organization.
+
+  Before you run this command, make sure you log in using Connect-PowerBIServiceAccount.
+  This cmdlet requires the calling user to be a tenant administrator of the Power BI service.
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Get-PowerBIEncryptionKey
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="System.Collections.Generic.IEnumerable`1" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```
+    PS C:\> Get-PowerBIEncryptionKey
+    ```
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Admin.dll-Help.xml
+  HelpUri: 
+  Module Name: MicrosoftPowerBIMgmt.Admin
+  PlatyPS schema version: 2024-05-01

@@ -1,0 +1,128 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Admin.Get-PowerBIWorkspaceEncryptionStatus
+name: Get-PowerBIWorkspaceEncryptionStatus
+module: MicrosoftPowerBIMgmt.Admin
+isPreview: false
+summary: |-
+  List Power BI workspace encryption status.
+description: |-
+  Retrieves the encryption status of datasets for a given workspace.
+  Operates against all workspaces within a tenant (Organization scope) that is encrypted by customer owned key.
+
+  The encryption status enumeration represents the following situation:
+
+  * Unknown - Unable to determine state due to dataset corruption.
+  * NotSupported - Encryption is not supported for this dataset.
+  * InSyncWithWorkspace - Encryption is supported and is in sync with the encryption settings.
+  * NotInSyncWithWorkspace - Encryption is supported and not in sync with the encryption settings.
+
+  Before you run this command, make sure you log in using Connect-PowerBIServiceAccount.
+  This cmdlet requires the calling user to be a tenant administrator of the Power BI service.
+parameters:
+  cmdletParameters:
+  - name: Id
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the workspace to return datasets.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Id
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Name
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      Name of the workspace to return datasets.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Name
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Workspace
+    type: <xref href="Workspace" data-throw-if-not-resolved="False" />
+    description: |-
+      Workspace from which datasets need to be returned.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Workspace
+      position: Named
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Get-PowerBIWorkspaceEncryptionStatus
+        -Name <String>
+        [<CommonParameters>]
+    ```
+  parameterSetName: Name
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Get-PowerBIWorkspaceEncryptionStatus
+        -Id <Guid>
+        [<CommonParameters>]
+    ```
+  parameterSetName: Id
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Get-PowerBIWorkspaceEncryptionStatus
+        -Workspace <Workspace>
+        [<CommonParameters>]
+    ```
+  parameterSetName: Workspace
+  isDefault: false
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="System.Collections.Generic.IEnumerable`1" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```
+    PS C:\> Get-PowerBIWorkspaceEncryptionStatus -Id '101be2ef-c88a-4291-9322-7e9b89ab665f'
+    ```
+- title: Example 2
+  description: |-
+    ```
+    PS C:\> Get-PowerBIWorkspaceEncryptionStatus -Name 'Contoso Sales'
+    ```
+- title: Example 3
+  description: |-
+    ```
+    PS C:\> Get-PowerBIWorkspaceEncryptionStatus -Workspace ( Get-PowerBIWorkspace -Scope Organization -Name "Contoso Sales")
+    ```
+- title: Example 4
+  description: |-
+    ```
+    PS C:\> Get-PowerBIWorkspace -Scope Organization | Get-PowerBIWorkspaceEncryptionStatus
+    ```
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Admin.dll-Help.xml
+  HelpUri: 
+  Module Name: MicrosoftPowerBIMgmt.Admin
+  PlatyPS schema version: 2024-05-01

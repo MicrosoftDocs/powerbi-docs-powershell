@@ -1,0 +1,22 @@
+### YamlMime:PowerShellModule1
+uid: MicrosoftPowerBIMgmt.Capacities
+name: MicrosoftPowerBIMgmt.Capacities Module
+isPreview: false
+cmdletGroups:
+- title: MicrosoftPowerBIMgmt.Capacities Cmdlets
+  cmdlets:
+  - MicrosoftPowerBIMgmt.Capacities.Get-PowerBICapacity
+description: |-
+  PowerShell cmdlets for managing and interacting with Power BI capacities.
+metadata:
+  Module Name: MicrosoftPowerBIMgmt.Capacities
+  Module Guid: 40911d31-7e56-426d-97e3-5696fcdabf9a
+  HelpInfoUri:
+    ? Please enter FwLink manually: 
+    : 
+  Help Version:
+    ? Please enter version of help manually (X.X.X.X) format: 
+    : 
+  Locale: en-US
+  PlatyPS schema version: 2024-05-01
+  document type: module

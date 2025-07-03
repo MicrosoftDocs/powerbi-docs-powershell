@@ -1,0 +1,147 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Data.Set-PowerBITable
+name: Set-PowerBITable
+module: MicrosoftPowerBIMgmt.Data
+isPreview: false
+summary: |-
+  Updates the metadata and schema for the specified Power BI table.
+description: |-
+  Updates the metadata and schema for the specified Power BI table.
+  Before you run this command, make sure you log in using Connect-PowerBIServiceAccount
+parameters:
+  cmdletParameters:
+  - name: Dataset
+    type: <xref href="Dataset" data-throw-if-not-resolved="False" />
+    description: |-
+      A dataset where tables are stored.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Dataset
+      position: Named
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: DatasetId
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the dataset where tables are to be stored.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: DatasetId
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Table
+    type: <xref href="Table" data-throw-if-not-resolved="False" />
+    description: |-
+      Table to update the schema.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Workspace
+    type: <xref href="Workspace" data-throw-if-not-resolved="False" />
+    description: |-
+      Workspace to filter the place where table resides.
+    aliases:
+    - Group
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: WorkspaceId
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the workspace to filter the place where table resides.
+    aliases:
+    - GroupId
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Set-PowerBITable
+        -Table <Table>
+        -DatasetId <Guid>
+        [-WorkspaceId <Guid>]
+        [-Workspace <Workspace>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: DatasetId
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Set-PowerBITable
+        -Table <Table>
+        -Dataset <Dataset>
+        [-WorkspaceId <Guid>]
+        [-Workspace <Workspace>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Dataset
+  isDefault: false
+inputs:
+- name: <xref href="Microsoft.PowerBI.Common.Api.Datasets.Dataset" data-throw-if-not-resolved="False" />
+  description: |-
+    Microsoft.PowerBI.Common.Api.Workspaces.Workspace
+outputs:
+- name: <xref href="Microsoft.PowerBI.Common.Api.Datasets.Dataset" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```powershell
+    $currentTables = Get-PowerBITable -DatasetId c47f6cff-70de-4837-a094-93a6f26e20bf
+
+    $currentTable = $currentTables[0]
+    $col1 = New-PowerBIColumn -Name Col1 -DataType Int64
+    $col2 = New-PowerBIColumn -Name Col2 -DataType String
+    $updatedTable = New-PowerBITable -Name $currentTable.Name -Columns $col1,$col2
+
+    Set-PowerBITable -Table $updatedTable -DatasetId c47f6cff-70de-4837-a094-93a6f26e20bf
+    ```
+
+    This example retrieves current table and create new one from the table.
+    Then, it updates the table schema.
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Data.dll-Help.xml
+  HelpUri: 
+  Module Name: MicrosoftPowerBIMgmt.Data
+  PlatyPS schema version: 2024-05-01

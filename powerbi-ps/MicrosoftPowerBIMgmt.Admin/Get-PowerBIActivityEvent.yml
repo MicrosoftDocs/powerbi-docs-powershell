@@ -1,0 +1,134 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Admin.Get-PowerBIActivityEvent
+name: Get-PowerBIActivityEvent
+module: MicrosoftPowerBIMgmt.Admin
+isPreview: false
+summary: |-
+  Retrieves the audit activity events for a Power BI tenant.
+description: |-
+  Retrieves the audit activity events for the calling user's tenant.
+  Before you run this command, make sure you log in using Connect-PowerBIServiceAccount.
+  This cmdlet requires the calling user to be a tenant administrator of the Power BI service.
+parameters:
+  cmdletParameters:
+  - name: ActivityType
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      Filters the activity records based on this activity type.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: EndDateTime
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the end of a timespan to retrieve audit activity events. It should be in UTC format and ISO 8601 compliant. Both StartDateTime and EndDateTime should be within the same UTC day.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: ResultType
+    type: <xref href="OutputType" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the type of result that is returned by the cmdlet.
+    acceptedValues:
+    - JsonString
+    - JsonObject
+    defaultValue: JsonString
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: StartDateTime
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the start of a timespan to retrieve audit activity events. It should be in UTC format and ISO 8601 compliant. Both StartDateTime and EndDateTime should be within the same UTC day.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: User
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      Filters the activity records based on this user email.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Get-PowerBIActivityEvent
+        -StartDateTime <String>
+        -EndDateTime <String>
+        [-ActivityType <String>]
+        [-User <String>]
+        [-ResultType <OutputType>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="System.Collections.Generic.IList`1" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```powershell
+    PS C:\> Get-PowerBIActivityEvent -StartDateTime 2019-08-10T14:35:20 -EndDateTime 2019-08-10T18:25:50
+    ```
+
+    Retrieves Power BI activity events between 08-10-19 14:35:20 UTC and 08-10-2019 18:25:50 UTC
+- title: Example 2
+  description: |-
+    ```powershell
+    PS C:\> Get-PowerBIActivityEvent -StartDateTime 2019-08-10T14:35:20 -EndDateTime 2019-08-10T18:25:50 -ActivityType viewreport -User admin@contoso.com -ResultType JsonObject
+    ```
+
+    Retrieves Power BI activity events between 08-10-19 14:35:20 UTC and 08-10-2019 18:25:50 UTC with the activity type of viewreport for user admin@contoso.com. Output will be JSON objects.
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Admin.dll-Help.xml
+  HelpUri: https://docs.microsoft.com/en-us/powershell/module/microsoftpowerbimgmt.admin/get-powerbiactivityevent?view=powerbi-ps
+  Module Name: MicrosoftPowerBIMgmt.Admin
+  PlatyPS schema version: 2024-05-01

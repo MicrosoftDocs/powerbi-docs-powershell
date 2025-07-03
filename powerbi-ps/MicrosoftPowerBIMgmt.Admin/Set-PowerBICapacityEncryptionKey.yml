@@ -1,0 +1,138 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Admin.Set-PowerBICapacityEncryptionKey
+name: Set-PowerBICapacityEncryptionKey
+module: MicrosoftPowerBIMgmt.Admin
+isPreview: false
+summary: |-
+  Updates the encryption key for the Power BI capacity.
+description: |-
+  Updates the encryption key associated with the Power BI capacity.
+  Encryption key for the tenant must be exist before calling this cmdlet.
+
+  Before you run this command, make sure you log in using Connect-PowerBIServiceAccount.
+  This cmdlet requires the calling user to be a tenant administrator of the Power BI service.
+parameters:
+  cmdletParameters:
+  - name: Capacity
+    type: <xref href="Capacity" data-throw-if-not-resolved="False" />
+    description: |-
+      The capacity entity to update.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: KeyNameAndCapacity
+      position: Named
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: CapacityId
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the capacity to update.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: KeyNameAndCapacityId
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: KeyAndCapacityId
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Key
+    type: <xref href="EncryptionKey" data-throw-if-not-resolved="False" />
+    description: |-
+      The encryption key entity to use.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: KeyAndCapacityId
+      position: Named
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: KeyName
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      Name of the encryption key to use.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: KeyNameAndCapacityId
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: KeyNameAndCapacity
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Set-PowerBICapacityEncryptionKey
+        -KeyName <String>
+        -CapacityId <Guid>
+        [<CommonParameters>]
+    ```
+  parameterSetName: KeyNameAndCapacityId
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Set-PowerBICapacityEncryptionKey
+        -KeyName <String>
+        -Capacity <Capacity>
+        [<CommonParameters>]
+    ```
+  parameterSetName: KeyNameAndCapacity
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Set-PowerBICapacityEncryptionKey
+        -Key <EncryptionKey>
+        -CapacityId <Guid>
+        [<CommonParameters>]
+    ```
+  parameterSetName: KeyAndCapacityId
+  isDefault: false
+inputs:
+- name: <xref href="Microsoft.PowerBI.Common.Api.Encryption.EncryptionKey" data-throw-if-not-resolved="False" />
+  description: |-
+    Microsoft.PowerBI.Common.Api.Capacities.Capacity
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```powershell
+    PS C:\> Set-PowerBICapacityEncryptionKey -CapacityId 08d57fce-9e79-49ac-afac-d61765f97f6f -KeyName 'Contoso Sales'
+    ```
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Admin.dll-Help.xml
+  HelpUri: 
+  Module Name: MicrosoftPowerBIMgmt.Admin
+  PlatyPS schema version: 2024-05-01

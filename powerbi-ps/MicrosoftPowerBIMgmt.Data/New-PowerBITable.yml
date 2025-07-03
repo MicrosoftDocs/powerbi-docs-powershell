@@ -1,0 +1,85 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Data.New-PowerBITable
+name: New-PowerBITable
+module: MicrosoftPowerBIMgmt.Data
+isPreview: false
+summary: |-
+  Creates a new Power BI table object.
+description: |-
+  Initiates the creation of a new Power BI table object. A table is a container for columns and rows, and contained within datasets.
+parameters:
+  cmdletParameters:
+  - name: Columns
+    type: <xref href="Column" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      An array of column objects.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Name
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      Name of the table.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    New-PowerBITable
+        -Name <String>
+        [-Columns <Column[]>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+outputs:
+- name: <xref href="Microsoft.PowerBI.Common.Api.Datasets.Table" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```powershell
+    PS C:\>$col1 = New-PowerBIColumn -Name ID -DataType Int64
+    PS C:\>$col2 = New-PowerBIColumn -Name Data -DataType String
+    PS C:\>$table1 = New-PowerBITable -Name SampleTable1 -Columns $col1,$col2
+    PS C:\>
+    PS C:\>$col3 = New-PowerBIColumn -Name ID -DataType Int64
+    PS C:\>$col4 = New-PowerBIColumn -Name Date -DataType DateTime
+    PS C:\>$col5 = New-PowerBIColumn -Name Detail -DataType String
+    PS C:\>$col6 = New-PowerBIColumn -Name Result -DataType Double
+    PS C:\>$table2 = New-PowerBITable -Name SampleTable2 -Columns $col3,$col4,$col5,$col6
+    PS C:\>
+    PS C:\>$dataset = New-PowerBIDataSet -Name SampleDataSet -Tables $table1,$table2
+    PS C:\>
+    PS C:\>Add-PowerBIDataSet -DataSet $dataset
+    ```
+
+    This example instantiate a table with two columns and another table with four columns, and instantiates a dataset.
+    Then, it creates the dataset in Power BI.
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Data.dll-Help.xml
+  HelpUri: 
+  Module Name: MicrosoftPowerBIMgmt.Data
+  PlatyPS schema version: 2024-05-01

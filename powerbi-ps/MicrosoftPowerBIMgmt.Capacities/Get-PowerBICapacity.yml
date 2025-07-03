@@ -1,0 +1,77 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Capacities.Get-PowerBICapacity
+name: Get-PowerBICapacity
+module: MicrosoftPowerBIMgmt.Capacities
+isPreview: false
+summary: |-
+  Returns a list of Power BI capacities.
+description: |-
+  Retrieves a list of Power BI capacities that matches the specified scope.
+
+  Before you run this command, make sure you log in using Connect-PowerBIServiceAccount.
+parameters:
+  cmdletParameters:
+  - name: Scope
+    type: <xref href="PowerBIUserScope" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates scope of the call. Individual returns only capacities assigned to the caller; Organization returns all capacities within a tenant (must be an administrator to initiate). Individual is the default.
+    acceptedValues:
+    - Individual
+    - Organization
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: ShowEncryptionKey
+    type: <xref href="SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Show encryption key details.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Get-PowerBICapacity
+        [-Scope <PowerBIUserScope>]
+        [-ShowEncryptionKey]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="System.Collections.Generic.IEnumerable`1" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```
+    PS C:\> Get-PowerBICapacity -Scope Organization -ShowEncryptionKey
+    ```
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Capacities.dll-Help.xml
+  HelpUri: 
+  Module Name: MicrosoftPowerBIMgmt.Capacities
+  PlatyPS schema version: 2024-05-01

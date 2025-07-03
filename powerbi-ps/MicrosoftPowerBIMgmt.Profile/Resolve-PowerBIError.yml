@@ -1,0 +1,88 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Profile.Resolve-PowerBIError
+name: Resolve-PowerBIError
+module: MicrosoftPowerBIMgmt.Profile
+isPreview: false
+summary: |-
+  Shows detailed error information produced from MicrosoftPowerBIMgmt.* cmdlets.
+description: |-
+  Outputs additional information for any errors produced from MicrosoftPowerBIMgmt.* cmdlets.
+parameters:
+  cmdletParameters:
+  - name: Error
+    type: <xref href="ErrorRecord" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      List of errors to display. For example, $Error[0..2] will show the last three errors.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: AnyError
+      position: Named
+      isRequired: false
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Last
+    type: <xref href="SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates to show the last error occurring in the PowerShell session.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: LastError
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Resolve-PowerBIError
+        [-Error <ErrorRecord[]>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: AnyError
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Resolve-PowerBIError
+        [-Last]
+        [<CommonParameters>]
+    ```
+  parameterSetName: LastError
+  isDefault: false
+inputs:
+- name: <xref href="System.Management.Automation.ErrorRecord" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```powershell
+    PS C:\> Resolve-PowerBIError
+    ```
+
+    Displays all errors occurring in the PowerShell session.
+- title: Example 2
+  description: |-
+    ```powershell
+    PS C:\> Resolve-PowerBIError -Last
+    ```
+
+    Displays the last error occurring in the PowerShell session.
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Profile.dll-Help.xml
+  HelpUri: https://docs.microsoft.com/en-us/powershell/module/microsoftpowerbimgmt.profile/resolve-powerbierror?view=powerbi-ps
+  Module Name: MicrosoftPowerBIMgmt.Profile
+  PlatyPS schema version: 2024-05-01

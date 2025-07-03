@@ -1,0 +1,195 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Profile.Invoke-PowerBIRestMethod
+name: Invoke-PowerBIRestMethod
+module: MicrosoftPowerBIMgmt.Profile
+isPreview: false
+summary: |-
+  Executes a REST call to the Power BI service, with the specified URL and body.
+description: |-
+  Invokes a REST request against the Power BI service using the profile you're logged in with.
+  The REST verb can be specified using the -Method parameter. The -Body parameter is required for the verbs POST, PUT, and PATCH.
+  Before you run this command, make sure you log in using Connect-PowerBIServiceAccount.
+parameters:
+  cmdletParameters:
+  - name: Body
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      Body of the request, also known as *content*. This is optional unless the request method is POST, PUT, or PATCH.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: ContentType
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      Content type to specify inside the header for the request. Default is 'application/json'.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Headers
+    type: <xref href="Hashtable" data-throw-if-not-resolved="False" />
+    description: |-
+      Optional headers to include with the request.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Method
+    type: <xref href="PowerBIWebRequestMethod" data-throw-if-not-resolved="False" />
+    description: |-
+      Type of HTTP request method\verb to make with the call.
+    acceptedValues:
+    - Get
+    - Post
+    - Delete
+    - Put
+    - Patch
+    - Options
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Organization
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      Organization name or tenant GUID to include in the URL. Default is 'myorg'.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: OutFile
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      Output file for writing the response content to. File path specified must not exist.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: TimeoutSec
+    type: <xref href="Int32" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies how long the request can be pending before it times out. Enter a value in seconds. Entering a value of 0 specifies an indefinite time-out.
+    defaultValue: "100"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Url
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      Relative or absolute URL of the Power BI entity you want to access. For example, if you want to access https://api.powerbi.com/v1.0/myorg/groups, then specify 'groups', or pass in the entire URL.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Version
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      Version of the API to include in the URL. Default is 'v1.0'. Ignored if -Url is an absolute URL.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Invoke-PowerBIRestMethod
+        -Url <String>
+        -Method <PowerBIWebRequestMethod>
+        [-Body <String>]
+        [-OutFile <String>]
+        [-ContentType <String>]
+        [-Headers <Hashtable>]
+        [-TimeoutSec <Int32>]
+        [-Organization <String>]
+        [-Version <String>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```powershell
+    PS C:\> Invoke-PowerBIRestMethod -Url 'groups' -Method Get
+    ```
+
+    Invokes the URL https://api.powerbi.com/v1.0/myorg/groups with the GET method\verb.
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Profile.dll-Help.xml
+  HelpUri: https://docs.microsoft.com/en-us/powershell/module/microsoftpowerbimgmt.profile/invoke-powerbirestmethod?view=powerbi-ps
+  Module Name: MicrosoftPowerBIMgmt.Profile
+  PlatyPS schema version: 2024-05-01

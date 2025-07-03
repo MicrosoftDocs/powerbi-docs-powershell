@@ -1,0 +1,29 @@
+### YamlMime:PowerShellModule1
+uid: MicrosoftPowerBIMgmt.Reports
+name: MicrosoftPowerBIMgmt.Reports Module
+isPreview: false
+cmdletGroups:
+- title: MicrosoftPowerBIMgmt.Reports Cmdlets
+  cmdlets:
+  - MicrosoftPowerBIMgmt.Reports.Copy-PowerBIReport
+  - MicrosoftPowerBIMgmt.Reports.Copy-PowerBITile
+  - MicrosoftPowerBIMgmt.Reports.Export-PowerBIReport
+  - MicrosoftPowerBIMgmt.Reports.Get-PowerBIDashboard
+  - MicrosoftPowerBIMgmt.Reports.Get-PowerBIImport
+  - MicrosoftPowerBIMgmt.Reports.Get-PowerBIReport
+  - MicrosoftPowerBIMgmt.Reports.Get-PowerBITile
+  - MicrosoftPowerBIMgmt.Reports.New-PowerBIDashboard
+  - MicrosoftPowerBIMgmt.Reports.New-PowerBIReport
+  - MicrosoftPowerBIMgmt.Reports.Remove-PowerBIReport
+description: |-
+  PowerShell cmdlets for managing and interacting with Power BI reports.
+metadata:
+  Module Name: MicrosoftPowerBIMgmt.Reports
+  Module Guid: dc5af656-715d-465d-8b57-e167cd6fce39
+  HelpInfoUri: https://go.microsoft.com/fwlink/?linkid=2002111&clcid=0x409
+  Help Version:
+    ? Please enter version of help manually (X.X.X.X) format: 
+    : 
+  Locale: en-US
+  PlatyPS schema version: 2024-05-01
+  document type: module

@@ -1,0 +1,200 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Data.Get-PowerBITable
+name: Get-PowerBITable
+module: MicrosoftPowerBIMgmt.Data
+isPreview: false
+summary: |-
+  Returns a list of Power BI tables.
+description: |-
+  Retrieves a list of Power BI tables in the dataset that match the specified search criteria.
+  Before you run this command, make sure you log in using Login-PowerBIServiceAccount.
+parameters:
+  cmdletParameters:
+  - name: Dataset
+    type: <xref href="Dataset" data-throw-if-not-resolved="False" />
+    description: |-
+      The dataset where the tables are stored.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Dataset
+      position: Named
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: DatasetId
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the dataset where the tables are stored.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: DatasetId
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: First
+    type: <xref href="Int32" data-throw-if-not-resolved="False" />
+    description: |-
+      First (top) list of results.
+    aliases:
+    - Top
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Name
+    type: <xref href="String" data-throw-if-not-resolved="False" />
+    description: |-
+      Name of the table to return if one exists with that name. Case insensitive search.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Scope
+    type: <xref href="PowerBIUserScope" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates scope of the call. Individual returns only tables under datasets assigned to the caller; Organization returns tables under any dataset within a tenant (must be an administrator to initiate). Individual is the default.
+    acceptedValues:
+    - Individual
+    - Organization
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Skip
+    type: <xref href="Int32" data-throw-if-not-resolved="False" />
+    description: |-
+      Skips the first set of results.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Workspace
+    type: <xref href="Workspace" data-throw-if-not-resolved="False" />
+    description: |-
+      Workspace to filter results to, tables only belonging to that workspace are shown.
+    aliases:
+    - Group
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: WorkspaceId
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the workspace to filter results to, tables only belonging to that workspace are shown.
+    aliases:
+    - GroupId
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Get-PowerBITable
+        -DatasetId <Guid>
+        [-Name <String>]
+        [-Scope <PowerBIUserScope>]
+        [-First <Int32>]
+        [-Skip <Int32>]
+        [-WorkspaceId <Guid>]
+        [-Workspace <Workspace>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: DatasetId
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Get-PowerBITable
+        -Dataset <Dataset>
+        [-Name <String>]
+        [-Scope <PowerBIUserScope>]
+        [-First <Int32>]
+        [-Skip <Int32>]
+        [-WorkspaceId <Guid>]
+        [-Workspace <Workspace>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Dataset
+  isDefault: false
+inputs:
+- name: <xref href="Microsoft.PowerBI.Common.Api.Datasets.Dataset" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```powershell
+    PS C:\> Get-PowerBITable -DatasetId eed49d27-8e3c-424d-9342-c6b3ca6db64d
+    ```
+
+    Returns a list of all Power BI tables in dataset eed49d27-8e3c-424d-9342-c6b3ca6db64d
+- title: Example 2
+  description: |-
+    ```powershell
+    PS C:\> Get-PowerBIDataset | ? AddRowsApiEnabled -eq $true | Get-PowerBITable
+    ```
+
+    Returns a list of all Power BI tables in datasets which supports AddRowApi.
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Data.dll-Help.xml
+  HelpUri: 
+  Module Name: MicrosoftPowerBIMgmt.Data
+  PlatyPS schema version: 2024-05-01

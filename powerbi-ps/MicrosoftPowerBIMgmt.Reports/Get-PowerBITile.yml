@@ -1,0 +1,165 @@
+### YamlMime:PowerShellCmdlet1
+uid: MicrosoftPowerBIMgmt.Reports.Get-PowerBITile
+name: Get-PowerBITile
+module: MicrosoftPowerBIMgmt.Reports
+isPreview: false
+summary: |-
+  Returns a list of Power BI tiles for a dashboard.
+description: |-
+  Retrieves a list of Power BI tiles that match the specified search criteria and scope.
+  Before you run this command, make sure you log in using Connect-PowerBIServiceAccount.
+parameters:
+  cmdletParameters:
+  - name: DashboardId
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the dashboard to return tiles for.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: First
+    type: <xref href="Int32" data-throw-if-not-resolved="False" />
+    description: |-
+      First (top) list of results.
+    aliases:
+    - Top
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: List
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Id
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the tile to return.
+    aliases:
+    - ImportId
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Id
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Scope
+    type: <xref href="PowerBIUserScope" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates scope of the call. Individual returns only tiles assigned to the caller; Organization returns all tiles within a tenant (must be an administrator to initiate). Individual is the default.
+    acceptedValues:
+    - Individual
+    - Organization
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Skip
+    type: <xref href="Int32" data-throw-if-not-resolved="False" />
+    description: |-
+      Skips the first set of results.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: List
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: WorkspaceId
+    type: <xref href="Guid" data-throw-if-not-resolved="False" />
+    description: |-
+      ID of the workspace to filter results to; only tiles that belong to that workspace are shown. Only available when -Scope is Individual.
+    aliases:
+    - GroupId
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Get-PowerBITile
+        -DashboardId <Guid>
+        [-Scope <PowerBIUserScope>]
+        [-First <Int32>]
+        [-Skip <Int32>]
+        [-WorkspaceId <Guid>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: List
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Get-PowerBITile
+        -DashboardId <Guid>
+        -Id <Guid>
+        [-Scope <PowerBIUserScope>]
+        [-WorkspaceId <Guid>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Id
+  isDefault: false
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="System.Collections.Generic.IEnumerable`1" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1
+  description: |-
+    ```powershell
+    PS C:\> Get-PowerBITile -DashboardId 6b071d0b-7430-4342-a3a6-d5c0fac130e4
+    ```
+
+    Returns a list of tiles in the Power BI dashboard with ID 6b071d0b-7430-4342-a3a6-d5c0fac130e4, for a user that has access to the dashboard.
+- title: Example 2
+  description: |-
+    ```powershell
+    PS C:\> Get-PowerBITile -DashboardId 6b071d0b-7430-4342-a3a6-d5c0fac130e4 -Scope Organization
+    ```
+
+    Returns a list of tiles in the Power BI dashboard with ID 6b071d0b-7430-4342-a3a6-d5c0fac130e4, for a dashboard in the user's organization.
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerBI.Commands.Reports.dll-Help.xml
+  HelpUri: https://docs.microsoft.com/en-us/powershell/module/microsoftpowerbimgmt.reports/get-powerbitile?view=powerbi-ps
+  Module Name: MicrosoftPowerBIMgmt.Reports
+  PlatyPS schema version: 2024-05-01

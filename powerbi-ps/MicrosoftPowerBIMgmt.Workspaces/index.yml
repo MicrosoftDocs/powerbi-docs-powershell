@@ -1,0 +1,26 @@
+### YamlMime:PowerShellModule1
+uid: MicrosoftPowerBIMgmt.Workspaces
+name: MicrosoftPowerBIMgmt.Workspaces Module
+isPreview: false
+cmdletGroups:
+- title: MicrosoftPowerBIMgmt.Workspaces Cmdlets
+  cmdlets:
+  - MicrosoftPowerBIMgmt.Workspaces.Add-PowerBIWorkspaceUser
+  - MicrosoftPowerBIMgmt.Workspaces.Get-PowerBIWorkspace
+  - MicrosoftPowerBIMgmt.Workspaces.Get-PowerBIWorkspaceMigrationStatus
+  - MicrosoftPowerBIMgmt.Workspaces.New-PowerBIWorkspace
+  - MicrosoftPowerBIMgmt.Workspaces.Remove-PowerBIWorkspaceUser
+  - MicrosoftPowerBIMgmt.Workspaces.Restore-PowerBIWorkspace
+  - MicrosoftPowerBIMgmt.Workspaces.Set-PowerBIWorkspace
+description: |-
+  PowerShell cmdlets for managing and interacting with Power BI workspaces.
+metadata:
+  Module Name: MicrosoftPowerBIMgmt.Workspaces
+  Module Guid: 3137355e-2bac-4061-9bfb-25b18c8bce9a
+  HelpInfoUri: https://go.microsoft.com/fwlink/?linkid=2002111&clcid=0x409
+  Help Version:
+    ? Please enter version of help manually (X.X.X.X) format: 
+    : 
+  Locale: en-US
+  PlatyPS schema version: 2024-05-01
+  document type: module
