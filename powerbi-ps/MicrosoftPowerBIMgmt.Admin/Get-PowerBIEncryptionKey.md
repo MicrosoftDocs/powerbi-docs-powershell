@@ -40,7 +40,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.Collections.Generic.IEnumerable`1[[Microsoft.PowerBI.Common.Api.Encryption.EncryptionKey, Microsoft.PowerBI.Common.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+### Microsoft.PowerBI.Common.Api.Encryption.EncryptionKey
 
 ## NOTES
 

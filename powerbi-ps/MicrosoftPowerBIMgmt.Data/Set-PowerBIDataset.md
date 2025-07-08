@@ -133,7 +133,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### System.String
-Microsoft.PowerBI.Common.Api.Workspaces.Workspace
+
+### Microsoft.PowerBI.Common.Api.Workspaces.Workspace
 
 ## OUTPUTS
 
