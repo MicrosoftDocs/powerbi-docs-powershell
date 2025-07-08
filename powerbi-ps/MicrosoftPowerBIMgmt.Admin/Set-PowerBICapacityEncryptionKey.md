@@ -109,7 +109,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.PowerBI.Common.Api.Encryption.EncryptionKey
-Microsoft.PowerBI.Common.Api.Capacities.Capacity
+
+### Microsoft.PowerBI.Common.Api.Capacities.Capacity
 
 ## OUTPUTS
 

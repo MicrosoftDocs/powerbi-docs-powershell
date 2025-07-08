@@ -1,8 +1,8 @@
 ---
 Module Name: MicrosoftPowerBIMgmt.Workspaces
 Module Guid: 3137355e-2bac-4061-9bfb-25b18c8bce9a
-Download Help Link: https://go.microsoft.com/fwlink/?linkid=2002111&clcid=0x409
-Help Version: {{Please enter version of help manually (X.X.X.X) format}}
+Download Help Link:
+Help Version:
 Locale: en-US
 ---
 
