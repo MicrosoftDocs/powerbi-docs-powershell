@@ -1,8 +1,8 @@
 ---
 Module Name: MicrosoftPowerBIMgmt.Admin
 Module Guid: bbf8be8e-0dcd-4cd8-b868-63e96371a47f
-Download Help Link: {{Please enter FwLink manually}}
-Help Version: {{Please enter version of help manually (X.X.X.X) format}}
+Download Help Link:
+Help Version:
 Locale: en-US
 ---
 
