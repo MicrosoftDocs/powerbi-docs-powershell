@@ -1,4 +1,4 @@
-﻿---
+---
 external help file: Microsoft.PowerBI.Commands.Profile.dll-Help.xml
 Module Name: MicrosoftPowerBIMgmt.Profile
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoftpowerbimgmt.profile/connect-powerbiserviceaccount?view=powerbi-ps
@@ -68,7 +68,7 @@ Logs in using a service principal against the Public cloud, a prompt will displa
 
 ### Example 4
 ```powershell
-PS C:\> Connect-PowerBIServiceAccount -ServicePrincipal -CertificateThumbprint 38DA4BED389A014E69A6E6D8AE56761E85F0DFA4 -ApplicationId b5fde143-722c-4e8d-8113-5b33a9291468
+PS C:\> Connect-PowerBIServiceAccount -ServicePrincipal -CertificateThumbprint AA11BB22CC33DD44EE55FF66AA77BB88CC99DD00 -ApplicationId 00001111-aaaa-2222-bbbb-3333cccc4444
 ```
 
 Logs in using a service principal with an installed certificate to the Public cloud. 
