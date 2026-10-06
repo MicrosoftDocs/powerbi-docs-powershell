@@ -1,7 +1,7 @@
 ---
 title: Power BI Cmdlets reference
 description: Learn about the PowerShell Cmdlets that are available to manage your Power BI tenant.
-author: kfollis
+author: leblocks
 manager: jinjma
 ms.reviewer: ''
 ms.service: powerbi
