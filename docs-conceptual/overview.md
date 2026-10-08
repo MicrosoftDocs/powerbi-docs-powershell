@@ -1,17 +1,20 @@
 ---
 title: Power BI Cmdlets reference
 description: Learn about the PowerShell Cmdlets that are available to manage your Power BI tenant.
-author: kfollis
+author: leblocks
 manager: jinjma
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-service
 ms.topic: overview
 ms.date: 06/21/2018
-ms.author: kfollis
+ms.author: sagurevich
 ---
 
 # Microsoft Power BI Cmdlets for Windows PowerShell and PowerShell Core
+
+> [!Important]
+> To improve authentication security, we are updating the sign-in configuration used by the Microsoft Power BI PowerShell module. As a result, older versions of the module will no longer be able to authenticate, and existing signed-in sessions may stop working. To prevent any service disruption, upgrade to `MicrosoftPowerBIMgmt` version 1.3.84 or higher and reauthenticate using `Connect-PowerBIServiceAccount`
 
 Welcome to the PowerShell reference for Microsoft Power BI. Here you will find resources for PowerShell modules targeting Power BI.
 
